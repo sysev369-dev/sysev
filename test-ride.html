@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Test Ride — SYSEV Pvt. Ltd.</title>
+<meta name="description" content="Book a free test ride for a SYSEV electric scooter at a showroom near you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .tr-form .field{margin-bottom:20px}
+  .tr-form label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
+  .tr-form input, .tr-form select{
+    width:100%;padding:13px 16px;border-radius:10px;border:1px solid var(--line);
+    font-family:"Hind",sans-serif;font-size:15px;background:var(--white);
+  }
+  .tr-form input:focus, .tr-form select:focus{border-color:var(--crimson)}
+  .model-select{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .model-opt{border:2px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .15s}
+  .model-opt.selected{border-color:var(--crimson);background:rgba(200,16,46,.05)}
+  .model-opt input{display:none}
+  .model-opt .nm{font-weight:600;font-size:14px;margin-top:4px}
+  .model-opt .rg{font-size:11.5px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace}
+  .step-row{display:flex;gap:0;margin-bottom:40px;max-width:560px}
+  .step{flex:1;text-align:center;position:relative}
+  .step .dot{width:30px;height:30px;border-radius:50%;background:var(--paper-warm);border:2px solid var(--line);display:grid;place-items:center;margin:0 auto;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;color:var(--ink-soft)}
+  .step.active .dot{background:var(--crimson);border-color:var(--crimson);color:white}
+  .step .lbl{font-size:12px;margin-top:6px;color:var(--ink-soft)}
+  .step:not(:last-child)::after{content:"";position:absolute;top:15px;left:60%;right:-40%;height:2px;background:var(--line);z-index:0}
+  .form-success{display:none;margin-top:18px;padding:16px 18px;background:rgba(46,158,91,.12);border:1px solid rgba(46,158,91,.3);border-radius:10px;color:#1f7a44;font-size:14.5px}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="10" fill="#1B2A4A"/>
+        <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
+        <circle cx="29" cy="11" r="3" fill="#C8102E"/>
+      </svg>
+      <span class="brand-stack">SYSEV<span class="tag">Pvt. Ltd. · Nepal</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="scooters.html">Scooters</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="dealers.html">Showrooms</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="test-ride.html" class="btn btn-primary btn-sm">Book a Test Ride</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="scooters.html">Scooters</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="dealers.html">Showrooms / Dealers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="test-ride.html">Book a Test Ride</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section style="padding-bottom:0;background:var(--paper-warm)">
+    <div class="container">
+      <span class="eyebrow">Free, no commitment</span>
+      <h1 style="font-size:clamp(32px,5vw,52px);margin-top:14px;max-width:620px">Book a test ride</h1>
+      <p style="font-size:17px;color:var(--ink-soft);margin-top:16px;max-width:560px">Pick a model, choose a showroom, and ride a SYSEV scooter for yourself — takes less than a minute to book.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:640px">
+      <div class="step-row reveal">
+        <div class="step active"><div class="dot">1</div><div class="lbl">Model</div></div>
+        <div class="step active"><div class="dot">2</div><div class="lbl">Showroom</div></div>
+        <div class="step active"><div class="dot">3</div><div class="lbl">Your details</div></div>
+      </div>
+
+      <div class="card reveal" style="padding:36px">
+        <form class="tr-form" id="testRideForm">
+
+          <label style="display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-bottom:10px">Which model would you like to ride?</label>
+          <div class="model-select" style="margin-bottom:26px">
+            <label class="model-opt selected">
+              <input type="radio" name="model" value="urban">
+              <div class="nm">Urban</div>
+              <div class="rg">70 km range</div>
+            </label>
+            <label class="model-opt">
+              <input type="radio" name="model" value="swift" checked>
+              <div class="nm">Swift</div>
+              <div class="rg">90 km range</div>
+            </label>
+            <label class="model-opt">
+              <input type="radio" name="model" value="swift_plus">
+              <div class="nm">Swift+</div>
+              <div class="rg">120 km range</div>
+            </label>
+          </div>
+
+          <div class="field">
+            <label for="tr-showroom">Choose a showroom</label>
+            <select id="tr-showroom">
+              <option>Putalisadak, Kathmandu</option>
+              <option>Pulchowk, Lalitpur</option>
+              <option>Suryabinayak, Bhaktapur</option>
+              <option>Boudha, Kathmandu</option>
+            </select>
+          </div>
+
+          <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div>
+              <label for="tr-date">Preferred date</label>
+              <input type="date" id="tr-date" required>
+            </div>
+            <div>
+              <label for="tr-time">Preferred time</label>
+              <select id="tr-time">
+                <option>10:00 AM</option>
+                <option>11:30 AM</option>
+                <option>1:00 PM</option>
+                <option>2:30 PM</option>
+                <option>4:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="tr-name">Full name</label>
+            <input type="text" id="tr-name" required>
+          </div>
+
+          <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div>
+              <label for="tr-phone">Phone number</label>
+              <input type="tel" id="tr-phone" placeholder="98XXXXXXXX" required>
+            </div>
+            <div>
+              <label for="tr-license">Have a license?</label>
+              <select id="tr-license">
+                <option>Yes, valid license</option>
+                <option>No, need guidance</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Confirm Test Ride</button>
+          <p style="font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:12px">Bring a valid license. Test rides are free and take about 15 minutes.</p>
+        </form>
+        <div class="form-success" id="testRideSuccess">You're booked! We'll send a confirmation by SMS and call to confirm your slot.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="10" fill="#F5A623"/>
+            <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#1B2A4A"/>
+          </svg>
+          SYSEV Pvt. Ltd.
+        </div>
+        <p style="font-size:14px;max-width:280px;color:rgba(250,246,239,.6)">Electric scooters built for Nepal's roads — with electric bikes and cars on the way. Registered in Kathmandu, Nepal.</p>
+        <div class="social-row" style="margin-top:20px">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.4-9.4a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 7.5s-.2-1.6-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 4 12 4 12 4s-4.4 0-7.2.4c-.4 0-1.2.1-2 .9C2.2 5.9 2 7.5 2 7.5S1.8 9.3 1.8 11v1.9c0 1.8.2 3.5.2 3.5s.2 1.6.8 2.2c.8.8 1.8.8 2.3.9 1.6.2 7 .4 7 .4s4.4 0 7.2-.4c.4 0 1.2-.1 2-.9.6-.6.8-2.2.8-2.2s.2-1.8.2-3.5V11c0-1.8-.2-3.5-.2-3.5zM9.9 14.6V8.9l5.8 2.9-5.8 2.8z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="scooters.html">Scooters</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+          <li><a href="dealers.html">Showrooms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="test-ride.html">Book a Test Ride</a></li>
+          <li><a href="contact.html">Service & Warranty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Head Office</h4>
+        <ul>
+          <li>SYSEV Pvt. Ltd.</li>
+          <li>Pulchowk, Lalitpur,<br>Bagmati Province, Nepal</li>
+          <li>+977-1-5970000</li>
+          <li>hello@sysev.com.np</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SYSEV Pvt. Ltd. All rights reserved. Company Reg. No. 123456/079/080.</span>
+      <span>Made in Nepal 🇳🇵</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  // model picker visual selection
+  document.querySelectorAll('.model-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('.model-opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input').checked = true;
+    });
+  });
+  // min date = today
+  const dateInput = document.getElementById('tr-date');
+  if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+  const testRideForm = document.getElementById('testRideForm');
+  if (testRideForm) {
+    testRideForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('testRideSuccess').style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>

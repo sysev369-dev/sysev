@@ -1,0 +1,218 @@
+/* =========================================================
+   SYSEV — Design tokens
+   Palette pulled from Nepal's own visual language, not generic "EV green"
+   ========================================================= */
+:root{
+  --crimson:#C8102E;
+  --crimson-deep:#9C0B22;
+  --marigold:#F5A623;
+  --marigold-deep:#D6870C;
+  --indigo:#1B2A4A;
+  --indigo-deep:#101A30;
+  --rhodo:#E85D75;
+  --paper:#FAF6EF;
+  --paper-warm:#F2EADA;
+  --ink:#1A1610;
+  --ink-soft:#5B5246;
+  --line:#E2D8C3;
+  --white:#FFFFFF;
+
+  --shadow-soft: 0 1px 0 rgba(26,22,16,.04), 0 8px 24px rgba(26,22,16,.08);
+  --shadow-card: 0 2px 0 rgba(26,22,16,.03), 0 14px 36px rgba(26,22,16,.10);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 26px;
+
+  --maxw: 1240px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Hind", system-ui, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4{margin:0;font-family:"Poppins",sans-serif;font-weight:700;letter-spacing:-0.01em}
+.mono{font-family:"JetBrains Mono",monospace}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+@media(max-width:640px){.container{padding:0 20px}}
+
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--crimson);
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--marigold);box-shadow:0 0 0 3px rgba(245,166,35,.25)}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;
+  padding:14px 26px;border-radius:100px;border:2px solid transparent;
+  cursor:pointer;transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--crimson);color:var(--white);box-shadow:0 10px 24px -8px rgba(200,16,46,.55)}
+.btn-primary:hover{background:var(--crimson-deep);transform:translateY(-2px)}
+.btn-marigold{background:var(--marigold);color:var(--indigo-deep);box-shadow:0 10px 24px -8px rgba(245,166,35,.55)}
+.btn-marigold:hover{background:var(--marigold-deep);transform:translateY(-2px)}
+.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--paper)}
+.btn-outline-light{background:transparent;border-color:rgba(255,255,255,.5);color:var(--white)}
+.btn-outline-light:hover{background:rgba(255,255,255,.12);border-color:var(--white)}
+.btn-block{width:100%}
+.btn-sm{padding:10px 18px;font-size:13.5px}
+
+/* =========================================================
+   Header / Nav
+   ========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,246,239,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-row{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Poppins",sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.02em;color:var(--ink)}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .tag{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;display:block;margin-top:-2px}
+.brand-stack{display:flex;flex-direction:column;line-height:1.05}
+
+.main-nav{display:flex;align-items:center;gap:6px}
+.main-nav a{
+  font-family:"Poppins",sans-serif;font-size:14.5px;font-weight:600;color:var(--ink-soft);
+  padding:10px 14px;border-radius:100px;transition:background .2s, color .2s;position:relative;
+}
+.main-nav a:hover{background:var(--paper-warm);color:var(--ink)}
+.main-nav a.active{color:var(--crimson)}
+.main-nav a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--marigold);border-radius:2px}
+
+.nav-cta{display:flex;align-items:center;gap:10px}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.nav-toggle svg{width:26px;height:26px}
+
+@media(max-width:980px){
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .nav-cta .btn-sm-hide{display:none}
+}
+
+.mobile-nav{
+  display:none;flex-direction:column;gap:2px;padding:10px 0 22px;border-top:1px solid var(--line);
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{padding:13px 6px;font-family:"Poppins",sans-serif;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+.mobile-nav a.active{color:var(--crimson)}
+
+/* =========================================================
+   Lung-ta motif (signature element): prayer-flag string reimagined
+   as a charge-route line. Reused across pages as section dividers.
+   ========================================================= */
+.lungta{
+  display:flex;align-items:center;width:100%;
+  --h: 34px;
+}
+.lungta .rope{flex:1;height:2px;background:linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent)}
+.lungta .flags{display:flex;gap:0;flex:none}
+.lungta .flags svg{display:block}
+
+/* =========================================================
+   Section helpers
+   ========================================================= */
+section{padding:96px 0}
+.section-tight{padding:64px 0}
+@media(max-width:768px){section{padding:64px 0}.section-tight{padding:44px 0}}
+
+.section-head{max-width:680px;margin-bottom:48px}
+.section-head h2{font-size:clamp(28px,4vw,42px);margin-top:10px}
+.section-head p{margin-top:14px;color:var(--ink-soft);font-size:17px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+.bg-indigo{background:var(--indigo)}
+.bg-indigo, .bg-indigo .ink-soft-on-dark{color:var(--paper)}
+.bg-indigo .ink-soft-on-dark{color:rgba(250,246,239,.66)}
+.bg-paper-warm{background:var(--paper-warm)}
+.bg-white{background:var(--white)}
+
+/* =========================================================
+   Cards
+   ========================================================= */
+.card{
+  background:var(--white);border-radius:var(--radius-md);
+  box-shadow:var(--shadow-card);
+  border:1px solid var(--line);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.site-footer{background:var(--indigo-deep);color:rgba(250,246,239,.78);padding-top:72px}
+.footer-grid{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:56px;
+  border-bottom:1px solid rgba(250,246,239,.12);
+}
+@media(max-width:880px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{display:flex;align-items:center;gap:10px;font-family:"Poppins",sans-serif;font-weight:800;font-size:20px;color:var(--paper);margin-bottom:14px}
+.footer-brand .mark{width:32px;height:32px}
+.footer-col h4{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--marigold);margin-bottom:16px;font-weight:700}
+.footer-col li{margin-bottom:11px;font-size:14.5px}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0 32px;font-size:13px;color:rgba(250,246,239,.5);flex-wrap:wrap;gap:10px}
+.social-row{display:flex;gap:10px}
+.social-row a{width:36px;height:36px;border-radius:50%;background:rgba(250,246,239,.08);display:grid;place-items:center;transition:background .2s}
+.social-row a:hover{background:var(--crimson)}
+.social-row svg{width:17px;height:17px}
+
+/* =========================================================
+   Utility
+   ========================================================= */
+.flex{display:flex}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:860px){.grid-2{grid-template-columns:1fr;gap:36px}}
+.tac{text-align:center}
+.mt-0{margin-top:0}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;background:var(--paper-warm);
+  border:1px solid var(--line);border-radius:100px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--ink-soft)
+}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat .num{font-family:"Poppins",sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,38px);color:var(--ink)}
+.stat .lbl{font-size:13px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace;letter-spacing:.02em}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+.badge-soon{
+  font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;background:var(--indigo);color:var(--marigold);
+  padding:5px 11px;border-radius:100px;
+}
+
+/* skip link for keyboard users */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--crimson);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+
+:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
