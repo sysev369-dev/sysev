@@ -25,6 +25,7 @@
     opacity: 1 !important; /* Forces visibility */
     transform: none !important;
     margin-bottom: 20px;
+    overflow: hidden;
   }
 
   .spec-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:20px; background: #fff;}
@@ -33,33 +34,43 @@
   .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:#444;width:220px}
   .spec-table tr:last-child td{border-bottom:none}
   
-  .image-placeholder-box {
-    background: #e9e4d9;
-    border: 2px dashed #b5a991;
-    border-radius: 8px;
-    min-height: 240px;
+  .image-display-box {
+    background: #fdfdfd;
+    border-bottom: 1px solid #e2d8c3;
+    min-height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: #444;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    padding: 20px;
-    text-align: center;
+    position: relative;
+  }
+  .image-display-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.25s ease-in-out;
   }
 
   .color-dots-container {
     display: flex;
-    gap: 8px;
-    margin: 12px 0;
+    gap: 10px;
+    margin: 16px 0;
+    align-items: center;
   }
   .color-dot {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0 0 0 1px #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .color-dot:hover {
+    transform: scale(1.15);
+  }
+  .color-dot.active-dot {
+    box-shadow: 0 0 0 2px var(--brand-blue);
   }
 
   .grid-two-models {
@@ -161,10 +172,8 @@
         <!-- SYS EV FX CARD -->
         <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background: #fff;">
           <div>
-            <div class="image-placeholder-box">
-              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-              <img src="fxmodelrosepink.jpg" alt="FX Model Rose Pink">
-              <span style="font-size:11px; color:#555; margin-top:4px;">Replace src with "fx sys orange.jpg" once uploaded</span>
+            <div class="image-display-box">
+              <img id="fx-main-img" src="assets/fx sys orange_2.jpg" alt="SYS EV FX Premium Orange">
             </div>
 
             <div style="padding: 26px;">
@@ -176,9 +185,9 @@
 
               <div class="color-dots-container">
                 <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
-                <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
-                <div class="color-dot" style="background: #E86F88;" title="Metallic Rose Pink"></div>
-                <div class="color-dot" style="background: #7EC0EE;" title="Sky Blue"></div>
+                <div class="color-dot active-dot" style="background: #F5A623;" title="Premium Orange" onclick="switchColor('fx', 'assets/fx sys orange_2.jpg', this)"></div>
+                <div class="color-dot" style="background: #E86F88;" title="Metallic Rose Pink" onclick="switchColor('fx', 'assets/fx sys rose pink.jpg', this)"></div>
+                <div class="color-dot" style="background: #7EC0EE;" title="Sky Blue" onclick="switchColor('fx', 'assets/fx sys sky blue_2.jpg', this)"></div>
               </div>
 
               <ul class="features-inline-list">
@@ -206,10 +215,8 @@
           <div style="position: absolute; top: 16px; right: 16px; background: #F5A623; color: white; font-family: JetBrains Mono; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2;">HIGHEST RANGE IN MARKET</div>
           
           <div>
-            <div class="image-placeholder-box">
-              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 00-1.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-              <span style="margin-top:10px; font-weight:600;">SYS EV M5 Image Here</span>
-              <span style="font-size:11px; color:#555; margin-top:4px;">Replace src with "M5 ORANGE SYS EV.jpg" once uploaded</span>
+            <div class="image-display-box">
+              <img id="m5-main-img" src="assets/M5 ORANGE SYS EV_2.jpg" alt="SYS EV M5 Premium Orange">
             </div>
 
             <div style="padding: 26px;">
@@ -221,9 +228,9 @@
 
               <div class="color-dots-container">
                 <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
-                <div class="color-dot" style="background: #4A773C;" title="Forest Green"></div>
-                <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
-                <div class="color-dot" style="background: #D81B60;" title="Crimson Pink"></div>
+                <div class="color-dot active-dot" style="background: #F5A623;" title="Premium Orange" onclick="switchColor('m5', 'assets/M5 ORANGE SYS EV_2.jpg', this)"></div>
+                <div class="color-dot" style="background: #4A773C;" title="Forest Green" onclick="switchColor('m5', 'assets/M5GREENSYSEV_2.jpg', this)"></div>
+                <div class="color-dot" style="background: #D81B60;" title="Crimson Pink" onclick="switchColor('m5', 'assets/M5PINKREDSYSEV.jpg', this)"></div>
               </div>
 
               <ul class="features-inline-list">
@@ -303,7 +310,7 @@
             <tr><td>Suspension Architecture</td><td>Front Hydraulic Suspension / Rear Spring Suspension Absorbers</td></tr>
             <tr><td>Tyre Framework</td><td>Front 110/70-12 / Rear 130/70-12 (Widened Tubeless Safety Tyres)</td></tr>
             <tr><td>Rim Type</td><td>Front & Rear 10-inch "Starry Sky" Style Aluminum Alloy Rims</td></tr>
-            <tr><td>Dimensions (L × W × H)</td><td>1880 mm × 730 mm × 1100 mm</td></tr></div>
+            <tr><td>Dimensions (L × W × H)</td><td>1880 mm × 730 mm × 1100 mm</td></tr>
             <tr><td>Smart Interface System</td><td>HD LED Display with NFC, Mobile App integration, Fault Diagnostics, Bluetooth Audio</td></tr>
           </table>
         </div>
@@ -330,7 +337,7 @@
         </h3>
         
         <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
-          <table class="spec-table" style="margin-bottom: 0;"></div>
+          <table class="spec-table" style="margin-bottom: 0;">
             <tr><td>Technical Attribute</td><td>Factory Specification Detail Data</td></tr>
             <tr><td>Powertrain System</td><td>All-new Yuma liquid-cooled pure copper 2500W 12-inch motor</td></tr>
             <tr><td>Battery Pack Assembly</td><td>72V 120Ah Massive LFP (Max Capacity, Maximum Performance Yield)</td></tr>
@@ -371,6 +378,25 @@
 </footer>
 
 <script>
+  // Dynamic Image Color Switching Functionality
+  function switchColor(modelId, imagePath, dotElement) {
+    const mainImg = document.getElementById(modelId + '-main-img');
+    if (mainImg) {
+      mainImg.style.opacity = '0.3';
+      setTimeout(() => {
+        mainImg.src = imagePath;
+        mainImg.style.opacity = '1';
+      }, 150);
+    }
+    
+    // Manage active dot outline state inside context container
+    const parentContainer = dotElement.parentElement;
+    const dots = parentContainer.querySelectorAll('.color-dot');
+    dots.forEach(d => d.classList.remove('active-dot'));
+    dotElement.classList.add('active-dot');
+  }
+
+  // Range Slider Calculator Mechanics
   const dailySlider = document.getElementById('daily');
   const dailyVal = document.getElementById('dailyVal');
   const modelSelect = document.getElementById('model');
