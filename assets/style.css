@@ -127,8 +127,7 @@ h1,h2,h3,h4{margin:0;font-family:"Poppins",sans-serif;font-weight:700;letter-spa
 .mobile-nav a.active{color:var(--crimson)}
 
 /* =========================================================
-   Lung-ta motif (signature element): prayer-flag string reimagined
-   as a charge-route line. Reused across pages as section dividers.
+   Lung-ta motif (signature element)
    ========================================================= */
 .lungta{
   display:flex;align-items:center;width:100%;
@@ -211,8 +210,96 @@ section{padding:96px 0}
   padding:5px 11px;border-radius:100px;
 }
 
-/* skip link for keyboard users */
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--crimson);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
 
 :focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
+
+/* =========================================================
+   Technical Matrix Table Style System
+   ========================================================= */
+.spec-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  margin-top: 16px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-soft);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Hind", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  background: var(--white);
+}
+
+.spec-table tr {
+  /* Enforces default calculated structural height boundaries */
+  min-height: 52px; 
+}
+
+.spec-table th {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper-warm);
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--line);
+  position: sticky;
+  top: 78px; /* Sticks precisely beneath sticky site header navigation row */
+  z-index: 10;
+}
+
+.spec-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* Clear column width proportions */
+.spec-table tr td:first-child, 
+.spec-table tr th:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  width: 260px;
+  background: rgba(250, 246, 239, 0.3);
+}
+
+/* Row interaction states and zebra striping pattern options */
+.spec-table tbody tr:nth-child(even) {
+  background: rgba(250, 246, 239, 0.4);
+}
+
+.spec-table tbody tr:hover {
+  background: rgba(245, 166, 35, 0.05);
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-table strong {
+  color: var(--crimson-deep);
+  font-weight: 700;
+}
+
+@media(max-width: 768px) {
+  .spec-table th, 
+  .spec-table td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .spec-table tr td:first-child, 
+  .spec-table tr th:first-child {
+    width: 160px;
+  }
+}
