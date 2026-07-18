@@ -3,19 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electric Scooters — SYSEV Pvt. Ltd.</title>
-<meta name="description" content="Browse SYSEV's electric scooter line-up: Urban, Swift, and Swift+. Compare range, price, and specs built for Nepal's roads.">
+<title>Electric Scooters Lineup — SYS EV</title>
+<meta name="description" content="Explore the SYS EV lineup: FX Smart and M5 Long-Range Revolution. Engineered with advanced LFP batteries for Nepal's roads.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  .spec-table{width:100%;border-collapse:collapse;font-size:14.5px}
+  :root {
+    --brand-orange: #F5A623;
+    --brand-blue: #1B2A4A;
+    --brand-pink: #E86F88;
+  }
+  .spec-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:20px;}
   .spec-table th{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:14px 16px;background:var(--paper-warm);position:sticky;top:78px}
   .spec-table td{padding:14px 16px;border-bottom:1px solid var(--line)}
-  .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:var(--ink-soft);width:180px}
+  .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:var(--ink-soft);width:220px}
   .spec-table tr:last-child td{border-bottom:none}
-  .model-pill-row{display:flex;gap:10px;flex-wrap:wrap}
+  
+  .image-placeholder-box {
+    background: #e2d8c3;
+    border: 2px dashed #b5a991;
+    border-radius: 8px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #555;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .color-dots-container {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #ccc;
+    cursor: pointer;
+  }
+
+  .grid-two-models {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 768px) {
+    .grid-two-models { grid-template-columns: 1fr; }
+  }
+
+  .features-inline-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 13.5px;
+  }
+  .features-inline-list li {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+  }
+  .features-inline-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: green;
+    font-weight: bold;
+  }
+
   .calc-box{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;box-shadow:var(--shadow-card)}
   .calc-box label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;margin-top:16px}
   .calc-box input[type=range]{width:100%}
@@ -34,7 +99,7 @@
         <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
         <circle cx="29" cy="11" r="3" fill="#C8102E"/>
       </svg>
-      <span class="brand-stack">SYSEV<span class="tag">Pvt. Ltd. · Nepal</span></span>
+      <span class="brand-stack">SYS EV<span class="tag">Pvt. Ltd. · Nepal</span></span>
     </a>
     <nav class="main-nav" aria-label="Primary">
       <a href="index.html">Home</a>
@@ -47,125 +112,121 @@
     </nav>
     <div class="nav-cta">
       <a href="test-ride.html" class="btn btn-primary btn-sm">Book a Test Ride</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-      </button>
     </div>
-  </div>
-  <div class="container">
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html" class="active">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html">Showrooms / Dealers</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="test-ride.html">Book a Test Ride</a>
-    </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ================= PAGE HERO ================= -->
-  <section style="padding-bottom:48px;background:var(--paper-warm)">
+  <!-- ================= PAGE HERO WITH YOUR NEW PHRASING ================= -->
+  <section style="padding: 56px 0; background: var(--paper-warm)">
     <div class="container">
-      <span class="eyebrow">Available now</span>
-      <h1 style="font-size:clamp(32px,5vw,52px);margin-top:14px;max-width:700px">Three scooters. One commute, however you ride it.</h1>
-      <p style="font-size:17px;color:var(--ink-soft);margin-top:16px;max-width:580px">From short city hops to cross-valley commutes — every SYSEV scooter ships with a swappable battery, a 3-year warranty, and free service for the first year.</p>
+      <span class="eyebrow" style="color: var(--crimson); text-transform: uppercase; font-weight: 700;">Ride The Future. Own The Change.</span>
+      <h1 style="font-size: clamp(32px, 5vw, 48px); margin-top: 14px; max-width: 800px; font-weight: 800; line-height: 1.15;">
+        Share Your Story: The Ultimate Long-Range Revolution.
+      </h1>
+      <p style="font-size: 18px; color: var(--ink-soft); margin-top: 16px; max-width: 650px; line-height: 1.6;">
+        Tell us about your ride on the groundbreaking <strong style="color:var(--indigo-deep)">SYS EV M5</strong>—engineered with highest-in-market battery range, or rule city traffic elegantly with the ultra-smart <strong style="color:var(--indigo-deep)">SYS EV FX</strong>.
+      </p>
     </div>
   </section>
 
-  <!-- ================= MODEL CARDS ================= -->
+  <!-- ================= MODEL SECTIONS ================= -->
   <section class="section-tight">
     <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <div class="grid-two-models">
 
-        <!-- URBAN -->
-        <div class="card reveal" style="overflow:hidden">
-          <div style="background:#E2D8C3;padding:28px 24px">
-            <svg viewBox="0 0 280 160" style="width:100%">
-              <ellipse cx="140" cy="140" rx="110" ry="9" fill="black" opacity=".12"/>
-              <g transform="translate(40,40)">
-                <circle cx="20" cy="90" r="22" fill="#1A1610"/>
-                <circle cx="160" cy="90" r="22" fill="#1A1610"/>
-                <path d="M14 90 L14 52 Q14 40 30 38 L90 33 Q108 32 114 46 L160 90" stroke="#1B2A4A" stroke-width="9" fill="none" stroke-linecap="round"/>
-                <rect x="30" y="26" width="46" height="12" rx="6" fill="#F5A623"/>
-              </g>
-            </svg>
+        <!-- SYS EV FX CARD -->
+        <div class="card reveal" style="overflow:hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <!-- IMAGE PLACEHOLDER FOR FX -->
+            <div class="image-placeholder-box">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+              <span style="margin-top:10px; font-weight:600;">SYS EV FX Image Here</span>
+              <span style="font-size:11px; color:#777; margin-top:4px;">Replace src with "fx sys orange.jpg" or "fxmodelrosepink.jpg"</span>
+              <!-- When ready, uncomment below and delete the placeholder style text: -->
+              <!-- <img src="fx sys orange.jpg" alt="SYS EV FX" style="width:100%; height:auto; object-fit:contain;"> -->
+            </div>
+
+            <div style="padding: 26px;">
+              <div class="pill" style="margin-bottom: 12px; background: #eef2f7; color: var(--brand-blue)">SMART. POWERFUL. PREMIUM.</div>
+              <h2 style="font-size: 28px; margin: 0 0 8px 0;">SYS EV FX</h2>
+              <p style="color: var(--ink-soft); font-size: 14.5px; margin-bottom: 15px;">
+                Designed for swift urban movement. Equipped with a 2500W Yuma Liquid-Cooled Motor and high safety protections.
+              </p>
+
+              <div class="color-dots-container">
+                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px;">Colours:</span>
+                <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
+                <div class="color-dot" style="background: #E86F88;" title="Metallic Rose Pink"></div>
+                <div class="color-dot" style="background: #7EC0EE;" title="Sky Blue"></div>
+              </div>
+
+              <ul class="features-inline-list">
+                <li>2500W Yuma Liquid Motor</li>
+                <li>Up to 150-200 km Range</li>
+                <li>NFC + Mobile Bluetooth App</li>
+                <li>Waterproof Premium Seats</li>
+                <li>Hill Hold Assist Feature</li>
+                <li>Smart Fault Diagnostics</li>
+              </ul>
+            </div>
           </div>
-          <div style="padding:26px">
-            <div class="pill" style="margin-bottom:12px">City commuter</div>
-            <h3 style="font-size:21px">SYSEV Urban</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:8px">Light, nimble, and easy to park — built for short hops within Ring Road.</p>
-            <div class="flex" style="gap:18px;margin-top:18px">
-              <div class="stat"><span class="num" style="font-size:20px">70 km</span><span class="lbl">RANGE</span></div>
-              <div class="stat"><span class="num" style="font-size:20px">45 km/h</span><span class="lbl">TOP SPEED</span></div>
+
+          <div style="padding: 0 26px 26px 26px;">
+            <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 15px;">
+              <span style="font-size: 12px; color: var(--ink-soft); display:block;">Starting Price (NRS)</span>
+              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: var(--indigo-deep)">Rs 2,10,000</span>
             </div>
-            <div style="display:flex;align-items:baseline;gap:8px;margin-top:20px">
-              <span style="font-family:Poppins;font-weight:800;font-size:24px">Rs 1,85,000</span>
-            </div>
-            <a href="#urban" class="btn btn-outline btn-block" style="margin-top:16px">View Specs</a>
+            <a href="#specs-fx" class="btn btn-outline btn-block" style="margin-top: 16px;">Detailed Specs & Options</a>
           </div>
         </div>
 
-        <!-- SWIFT -->
-        <div class="card reveal" style="overflow:hidden">
-          <div style="background:#E2D8C3;padding:28px 24px">
-            <svg viewBox="0 0 280 160" style="width:100%">
-              <ellipse cx="140" cy="140" rx="110" ry="9" fill="black" opacity=".12"/>
-              <g transform="translate(35,36)">
-                <circle cx="22" cy="94" r="24" fill="#1A1610"/>
-                <circle cx="168" cy="94" r="24" fill="#1A1610"/>
-                <path d="M16 94 L16 54 Q16 40 34 38 L98 32 Q118 30 126 46 L168 94" stroke="#C8102E" stroke-width="10" fill="none" stroke-linecap="round"/>
-                <rect x="34" y="24" width="52" height="14" rx="7" fill="#F5A623"/>
-              </g>
-            </svg>
-          </div>
-          <div style="padding:26px">
-            <div class="pill" style="margin-bottom:12px">Best seller</div>
-            <h3 style="font-size:21px">SYSEV Swift</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:8px">The all-rounder — enough range and power for a daily door-to-office commute.</p>
-            <div class="flex" style="gap:18px;margin-top:18px">
-              <div class="stat"><span class="num" style="font-size:20px">90 km</span><span class="lbl">RANGE</span></div>
-              <div class="stat"><span class="num" style="font-size:20px">55 km/h</span><span class="lbl">TOP SPEED</span></div>
+        <!-- SYS EV M5 CARD -->
+        <div class="card reveal" style="overflow:hidden; border: 2px solid var(--brand-orange); position: relative; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="position: absolute; top: 16px; right: 16px; background: var(--brand-orange); color: white; font-family: JetBrains Mono; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2;">HIGHEST RANGE IN MARKET</div>
+          
+          <div>
+            <!-- IMAGE PLACEHOLDER FOR M5 -->
+            <div class="image-placeholder-box" style="background: #fdfaf4;">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+              <span style="margin-top:10px; font-weight:600;">SYS EV M5 Image Here</span>
+              <span style="font-size:11px; color:#777; margin-top:4px;">Replace src with "M5 ORANGE SYS EV.jpg" or "M5GREENSYSEV.jpg"</span>
+              <!-- When ready, uncomment below and delete the placeholder style text: -->
+              <!-- <img src="M5 ORANGE SYS EV.jpg" alt="SYS EV M5" style="width:100%; height:auto; object-fit:contain;"> -->
             </div>
-            <div style="display:flex;align-items:baseline;gap:8px;margin-top:20px">
-              <span style="font-family:Poppins;font-weight:800;font-size:24px">Rs 2,35,000</span>
-            </div>
-            <a href="#swift" class="btn btn-outline btn-block" style="margin-top:16px">View Specs</a>
-          </div>
-        </div>
 
-        <!-- SWIFT+ -->
-        <div class="card reveal" style="overflow:hidden;border:2px solid var(--marigold);position:relative">
-          <div style="position:absolute;top:16px;right:16px;background:var(--marigold);color:var(--indigo-deep);font-family:JetBrains Mono;font-size:11px;font-weight:700;padding:5px 11px;border-radius:100px;z-index:2">FLAGSHIP</div>
-          <div style="background:var(--indigo);padding:28px 24px">
-            <svg viewBox="0 0 280 160" style="width:100%">
-              <ellipse cx="140" cy="140" rx="110" ry="9" fill="black" opacity=".2"/>
-              <g transform="translate(30,30)">
-                <circle cx="24" cy="98" r="26" fill="#0E1626"/>
-                <circle cx="24" cy="98" r="10" fill="#F5A623"/>
-                <circle cx="176" cy="98" r="26" fill="#0E1626"/>
-                <circle cx="176" cy="98" r="10" fill="#F5A623"/>
-                <path d="M18 98 L18 56 Q18 40 38 38 L104 30 Q126 28 134 46 L176 98" stroke="#C8102E" stroke-width="11" fill="none" stroke-linecap="round"/>
-                <rect x="38" y="22" width="56" height="15" rx="7" fill="#F5A623"/>
-              </g>
-            </svg>
+            <div style="padding: 26px;">
+              <div class="pill" style="margin-bottom: 12px; background: rgba(245,166,35,.15); border-color: rgba(245,166,35,.4); color: var(--brand-orange)">THE LONG-RANGE REVOLUTION</div>
+              <h2 style="font-size: 28px; margin: 0 0 8px 0;">SYS EV M5</h2>
+              <p style="color: var(--ink-soft); font-size: 14.5px; margin-bottom: 15px;">
+                Conquer extreme trips with total peace of mind. Outfitted with massive battery capabilities and rugged structures built for Nepal's terrain.
+              </p>
+
+              <div class="color-dots-container">
+                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px;">Colours:</span>
+                <div class="color-dot" style="background: #4A773C;" title="Forest Green"></div>
+                <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
+                <div class="color-dot" style="background: #D81B60;" title="Crimson Pink"></div>
+              </div>
+
+              <ul class="features-inline-list">
+                <li>2500W Yuma Liquid-Cooled</li>
+                <li>Massive 330 - 350 km Range</li>
+                <li>72V 120Ah LFP Long-Life Tech</li>
+                <li>Full Body Protective Safety Cage</li>
+                <li>Premium Leather Comfort Seats</li>
+                <li>Hill Hold + Parking (P) Mode</li>
+              </ul>
+            </div>
           </div>
-          <div style="padding:26px">
-            <div class="pill" style="margin-bottom:12px;background:rgba(245,166,35,.15);border-color:rgba(245,166,35,.4)">Most range</div>
-            <h3 style="font-size:21px">SYSEV Swift+</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:8px">Our flagship — more torque, more range, and a digital dash with navigation.</p>
-            <div class="flex" style="gap:18px;margin-top:18px">
-              <div class="stat"><span class="num" style="font-size:20px">120 km</span><span class="lbl">RANGE</span></div>
-              <div class="stat"><span class="num" style="font-size:20px">65 km/h</span><span class="lbl">TOP SPEED</span></div>
+
+          <div style="padding: 0 26px 26px 26px;">
+            <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 15px;">
+              <span style="font-size: 12px; color: var(--ink-soft); display:block;">Fixed Price (NRS)</span>
+              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: #D04A02;">Rs 3,85,000</span>
             </div>
-            <div style="display:flex;align-items:baseline;gap:8px;margin-top:20px">
-              <span style="font-family:Poppins;font-weight:800;font-size:24px">Rs 2,95,000</span>
-            </div>
-            <a href="#swift_plus" class="btn btn-primary btn-block" style="margin-top:16px">View Specs</a>
+            <a href="#specs-m5" class="btn btn-primary btn-block" style="margin-top: 16px;">Detailed Specs & Options</a>
           </div>
         </div>
 
@@ -173,94 +234,91 @@
     </div>
   </section>
 
-  <div class="container"><div class="lungta"><div class="flags" data-count="11"></div><div class="rope"></div></div></div>
-
-  <!-- ================= RANGE CALCULATOR ================= -->
-  <section>
+  <!-- ================= DYNAMIC ESTIMATION RANGE CALCULATOR ================= -->
+  <section style="background: var(--paper-warm); padding: 56px 0;">
     <div class="container grid-2">
       <div class="reveal">
-        <span class="eyebrow">Plan your charge</span>
-        <h2 style="margin-top:10px;font-size:clamp(24px,3.2vw,32px)">How often would you actually charge?</h2>
-        <p style="color:var(--ink-soft);margin-top:14px">Tell us your daily commute distance and we'll estimate your weekly charging routine and rough electricity cost — so there's no surprise after you buy.</p>
+        <span class="eyebrow">Plan Your Adventures</span>
+        <h2 style="margin-top:10px; font-size:clamp(24px,3.2vw,32px)">How long can your story go?</h2>
+        <p style="color:var(--ink-soft); margin-top:14px; line-height: 1.6;">
+          Select a battery option and adjust your standard weekly usage patterns. Our system calculates estimated target intervals before needing your next plug-in charge.
+        </p>
       </div>
       <div class="calc-box reveal">
         <form id="rangeCalc">
-          <label for="model">Choose a model</label>
+          <label for="model">Choose Variant Configuration</label>
           <select id="model" name="model">
-            <option value="urban">SYSEV Urban — 70 km range</option>
-            <option value="swift" selected>SYSEV Swift — 90 km range</option>
-            <option value="swift_plus">SYSEV Swift+ — 120 km range</option>
+            <option value="95">FX — 72V 35Ah Graphene/LFP (95 km average)</option>
+            <option value="175">FX — 72V 55Ah LFP Flagship (175 km average)</option>
+            <option value="340" selected>M5 — 72V 120Ah Ultra Premium (340 km average)</option>
           </select>
-          <label for="daily">Daily commute distance: <strong><span id="dailyVal">20</span> km</strong></label>
-          <input type="range" id="daily" name="daily" min="0" max="100" value="20" step="5">
+          <label for="daily">Estimated Daily Commute Distance: <strong><span id="dailyVal">40</span> km</strong></label>
+          <input type="range" id="daily" name="daily" min="10" max="150" value="40" step="5">
         </form>
-        <div class="calc-result" id="rangeCalcResult">Enter your daily commute distance to see estimated charging frequency and cost.</div>
+        <div class="calc-result" id="rangeCalcResult">
+          Loading smart statistics computation...
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= FULL SPEC SHEETS ================= -->
-  <section class="bg-paper-warm">
+  <!-- ================= FULL SPECIFICATION DATA TABLES ================= -->
+  <section>
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Full specifications</span>
-        <h2>Compare every detail</h2>
+      <div class="section-head reveal" style="text-align: center; margin-bottom: 45px;">
+        <span class="eyebrow">Technical Matrix</span>
+        <h2>Deep Specification Compare</h2>
       </div>
 
-      <div id="urban" class="reveal" style="margin-bottom:40px">
-        <h3 style="font-size:19px;margin-bottom:12px">SYSEV Urban</h3>
+      <!-- FX VARIANT BLOCK -->
+      <div id="specs-fx" class="reveal" style="margin-bottom: 60px;">
+        <h3 style="font-size:22px; margin-bottom:12px; color: var(--brand-blue); display: flex; justify-content: space-between; align-items: baseline;">
+          <span>SYS EV FX Detailed Specs</span>
+          <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
+        </h3>
+        
         <div class="card" style="overflow:auto">
           <table class="spec-table">
-            <tr><th>Spec</th><th>Value</th></tr>
-            <tr><td>Range (full charge)</td><td>70 km</td></tr>
-            <tr><td>Top speed</td><td>45 km/h</td></tr>
-            <tr><td>Battery</td><td>1.8 kWh removable lithium-ion</td></tr>
-            <tr><td>Charging time</td><td>3.5 hrs (0–100%)</td></tr>
-            <tr><td>Motor power</td><td>1000 W BLDC hub motor</td></tr>
-            <tr><td>Kerb weight</td><td>78 kg</td></tr>
-            <tr><td>Seat height</td><td>765 mm</td></tr>
-            <tr><td>Boot space</td><td>18 litres</td></tr>
-            <tr><td>Warranty</td><td>3 years / 30,000 km on battery; 2 years on vehicle</td></tr>
-            <tr><td>Price (Kathmandu valley, ex-showroom)</td><td>Rs 1,85,000</td></tr>
+            <tr><th>Technical Attribute</th><th>Factory Specification Detail Data</th></tr>
+            <tr><td>Motor Profile</td><td>All-new Yuma Liquid-Cooled Pure Copper 2500W 12-inch Motor</td></tr>
+            <tr><td>Braking Elements</td><td>Front & Rear Disc Brakes (180mm Front / 180mm Rear System)</td></tr>
+            <tr><td>Suspension Architecture</td><td>Front Hydraulic Suspension / Rear Spring Suspension Absorbers</td></tr>
+            <tr><td>Tyre Framework</td><td>Front 110/70-12 / Rear 130/70-12 (Widened Tubeless Safety Tyres)</td></tr>
+            <tr><td>Rim Type</td><td>Front & Rear 10-inch "Starry Sky" Style Aluminum Alloy Rims</td></tr>
+            <tr><td>Dimensions (L × W × H)</td><td>1880 mm × 730 mm × 1100 mm</td></tr>
+            <tr><td>Smart Interface System</td><td>HD LED Display with NFC, Mobile App integration, Fault Diagnostics, Bluetooth Audio</td></tr>
+          </table>
+        </div>
+
+        <h4 style="margin: 20px 0 10px 0; font-size:16px;">FX Battery Configuration & Pricing Matrix</h4>
+        <div class="card" style="overflow:auto">
+          <table class="spec-table" style="margin-bottom: 0;">
+            <tr style="background: #fdfdfd;"><td style="font-weight:bold;">Battery Pack Configuration</td><td style="font-weight:bold;">Cell Chemistry Type</td><td style="font-weight:bold;">Tested Range Range</td><td style="font-weight:bold;">Ex-Showroom Price (NRS)</td><td style="font-weight:bold;">Warranty Tier</td></tr>
+            <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,10,000</strong></td><td>1 Year Factory Coverage</td></tr>
+            <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,35,000</strong></td><td>2 Years Factory Coverage</td></tr>
+            <tr><td>72V 35Ah</td><td>LFP (Lithium Iron Phosphate)</td><td>90 - 100 km</td><td><strong>NRs 2,50,000</strong></td><td>3 Years Core Protection</td></tr>
+            <tr><td>72V 55Ah</td><td>LFP (Lithium Iron Phosphate)</td><td>150 - 200 km</td><td><strong>NRs 3,00,000</strong></td><td>3 Years Core Protection</td></tr>
           </table>
         </div>
       </div>
 
-      <div id="swift" class="reveal" style="margin-bottom:40px">
-        <h3 style="font-size:19px;margin-bottom:12px">SYSEV Swift</h3>
+      <!-- M5 VARIANT BLOCK -->
+      <div id="specs-m5" class="reveal" style="margin-bottom: 40px;">
+        <h3 style="font-size:22px; margin-bottom:12px; color: #D04A02; display: flex; justify-content: space-between; align-items: baseline;">
+          <span>SYS EV M5 Detailed Specs</span>
+          <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
+        </h3>
+        
         <div class="card" style="overflow:auto">
           <table class="spec-table">
-            <tr><th>Spec</th><th>Value</th></tr>
-            <tr><td>Range (full charge)</td><td>90 km</td></tr>
-            <tr><td>Top speed</td><td>55 km/h</td></tr>
-            <tr><td>Battery</td><td>2.5 kWh removable lithium-ion</td></tr>
-            <tr><td>Charging time</td><td>4 hrs (0–100%)</td></tr>
-            <tr><td>Motor power</td><td>1500 W BLDC hub motor</td></tr>
-            <tr><td>Kerb weight</td><td>92 kg</td></tr>
-            <tr><td>Seat height</td><td>770 mm</td></tr>
-            <tr><td>Boot space</td><td>22 litres</td></tr>
-            <tr><td>Warranty</td><td>3 years / 40,000 km on battery; 2 years on vehicle</td></tr>
-            <tr><td>Price (Kathmandu valley, ex-showroom)</td><td>Rs 2,35,000</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div id="swift_plus" class="reveal">
-        <h3 style="font-size:19px;margin-bottom:12px">SYSEV Swift+</h3>
-        <div class="card" style="overflow:auto">
-          <table class="spec-table">
-            <tr><th>Spec</th><th>Value</th></tr>
-            <tr><td>Range (full charge)</td><td>120 km</td></tr>
-            <tr><td>Top speed</td><td>65 km/h</td></tr>
-            <tr><td>Battery</td><td>3.4 kWh removable lithium-ion</td></tr>
-            <tr><td>Charging time</td><td>4.5 hrs (0–100%)</td></tr>
-            <tr><td>Motor power</td><td>2200 W BLDC hub motor</td></tr>
-            <tr><td>Kerb weight</td><td>105 kg</td></tr>
-            <tr><td>Seat height</td><td>775 mm</td></tr>
-            <tr><td>Boot space</td><td>26 litres</td></tr>
-            <tr><td>Extras</td><td>Digital dash, turn-by-turn navigation, reverse assist</td></tr>
-            <tr><td>Warranty</td><td>3 years / 50,000 km on battery; 3 years on vehicle</td></tr>
-            <tr><td>Price (Kathmandu valley, ex-showroom)</td><td>Rs 2,95,000</td></tr>
+            <tr><th>Technical Attribute</th><th>Factory Specification Detail Data</th></tr>
+            <tr><td>Powertrain System</td><td>All-new Yuma liquid-cooled pure copper 2500W 12-inch motor</td></tr>
+            <tr><td>Battery Pack Assembly</td><td>72V 120Ah Massive LFP (Max Capacity, Maximum Performance Yield)</td></tr>
+            <tr><td>Tested Range Range</td><td>330 - 350 km (Highest Certified in Market segments)</td></tr>
+            <tr><td>Premium Standard Options</td><td>Black waterproof leather seat, full-vehicle protective cage architecture, rearview mirrors, easy-lift center stand, USB port, floor mat, hill-hold control.</td></tr>
+            <tr><td>Braking & Wheels</td><td>Front/Rear disc brake set, Front 110/70-12 / Rear 130/70-12 Widened Tubeless tyres, 10" Starry Sky alloy rims.</td></tr>
+            <tr><td>Commercial Price Tag</td><td><strong>NRs 3,85,000 Complete</strong></td></tr>
+            <tr><td>Warranty Matrix</td><td>3 Years Comprehensive LFP Battery Pack Protection</td></tr>
           </table>
         </div>
       </div>
@@ -268,15 +326,15 @@
     </div>
   </section>
 
-  <!-- ================= CTA ================= -->
+  <!-- ================= BRAND CTA ================= -->
   <section class="section-tight">
     <div class="container">
-      <div style="background:var(--crimson);border-radius:var(--radius-lg);padding:56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;color:white">
+      <div style="background:var(--crimson); border-radius:var(--radius-lg); padding:56px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; color:white">
         <div>
-          <h2 style="font-size:clamp(22px,3vw,30px);color:white">Found your match?</h2>
-          <p style="margin-top:8px;color:rgba(255,255,255,.85)">Book a free test ride and feel the torque for yourself.</p>
+          <h2 style="font-size:clamp(22px,3vw,30px); color:white">Ready to change how you ride?</h2>
+          <p style="margin-top:8px; color:rgba(255,255,255,.85)">Secure your test ride window across Kathmandu Valley now.</p>
         </div>
-        <a href="test-ride.html" class="btn btn-marigold">Book a Test Ride</a>
+        <a href="test-ride.html" class="btn btn-marigold">Book a Test Ride Now</a>
       </div>
     </div>
   </section>
@@ -292,56 +350,54 @@
             <rect width="40" height="40" rx="10" fill="#F5A623"/>
             <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#1B2A4A"/>
           </svg>
-          SYSEV Pvt. Ltd.
+          SYS EV Pvt. Ltd.
         </div>
-        <p style="font-size:14px;max-width:280px;color:rgba(250,246,239,.6)">Electric scooters built for Nepal's roads — with electric bikes and cars on the way. Registered in Kathmandu, Nepal.</p>
-        <div class="social-row" style="margin-top:20px">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.4-9.4a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 7.5s-.2-1.6-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 4 12 4 12 4s-4.4 0-7.2.4c-.4 0-1.2.1-2 .9C2.2 5.9 2 7.5 2 7.5S1.8 9.3 1.8 11v1.9c0 1.8.2 3.5.2 3.5s.2 1.6.8 2.2c.8.8 1.8.8 2.3.9 1.6.2 7 .4 7 .4s4.4 0 7.2-.4c.4 0 1.2-.1 2-.9.6-.6.8-2.2.8-2.2s.2-1.8.2-3.5V11c0-1.8-.2-3.5-.2-3.5zM9.9 14.6V8.9l5.8 2.9-5.8 2.8z"/></svg></a>
-        </div>
+        <p style="font-size:14px; max-width:280px; color:rgba(250,246,239,.6)">
+          Premium Electric Scooters built explicitly for rugged Nepali streets. Engineered for endurance.
+        </p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="scooters.html">Scooters</a></li>
-          <li><a href="coming-soon.html">Coming Soon</a></li>
-          <li><a href="dealers.html">Showrooms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="test-ride.html">Book a Test Ride</a></li>
-          <li><a href="contact.html">Service & Warranty</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Head Office</h4>
-        <ul>
-          <li>SYSEV Pvt. Ltd.</li>
-          <li>Pulchowk, Lalitpur,<br>Bagmati Province, Nepal</li>
-          <li>+977-1-5970000</li>
-          <li>hello@sysev.com.np</li>
+        <h4>Authorized Contact Info</h4>
+        <ul style="color: rgba(250,246,239,.8); font-size: 13.5px; list-style:none; padding:0;">
+          <li>📞 +977 9766801639</li>
+          <li>✉️ sys-ev@outlook.com</li>
+          <li>🌐 www.sysev.com.np</li>
+          <li>📍 Kathmandu, Nepal</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 SYSEV Pvt. Ltd. All rights reserved. Company Reg. No. 123456/079/080.</span>
+      <span>© 2026 SYS EV Pvt. Ltd. All rights reserved.</span>
       <span>Made in Nepal 🇳🇵</span>
     </div>
   </div>
 </footer>
 
-<script src="assets/main.js"></script>
 <script>
+  // Advanced Interactive Range Calculation Mechanics
   const dailySlider = document.getElementById('daily');
   const dailyVal = document.getElementById('dailyVal');
-  if (dailySlider) {
-    dailySlider.addEventListener('input', () => { dailyVal.textContent = dailySlider.value; });
+  const modelSelect = document.getElementById('model');
+  const calcResult = document.getElementById('rangeCalcResult');
+
+  function updateCalculation() {
+    const dailyDistance = parseInt(dailySlider.value, 10);
+    const capacityRange = parseInt(modelSelect.value, 10);
+    dailyVal.textContent = dailyDistance;
+
+    const daysWithoutCharge = (capacityRange / dailyDistance).toFixed(1);
+    
+    if (daysWithoutCharge >= 7) {
+      calcResult.innerHTML = `With a <strong>${dailyDistance} km</strong> daily run, your selected setup will last <strong>over a full week (${daysWithoutCharge} days)</strong> on a single charge circle!`;
+    } else {
+      calcResult.innerHTML = `With a <strong>${dailyDistance} km</strong> daily run, you will need to recharge roughly every <strong>${daysWithoutCharge} days</strong> of operation.`;
+    }
+  }
+
+  if (dailySlider && modelSelect) {
+    dailySlider.addEventListener('input', updateCalculation);
+    modelSelect.addEventListener('change', updateCalculation);
+    updateCalculation(); // Initial trigger calculation
   }
 </script>
 </body>
