@@ -15,27 +15,38 @@
     --brand-blue: #1B2A4A;
     --brand-pink: #E86F88;
   }
-  .spec-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:20px;}
-  .spec-table th{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:14px 16px;background:var(--paper-warm);position:sticky;top:78px}
-  .spec-table td{padding:14px 16px;border-bottom:1px solid var(--line)}
-  .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:var(--ink-soft);width:220px}
+  
+  /* Hardcoded fallbacks to guarantee visibility even if styles.css fails */
+  .card {
+    background: #ffffff !important;
+    border: 1px solid #e2d8c3 !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    opacity: 1 !important; /* Forces visibility */
+    transform: none !important;
+    margin-bottom: 20px;
+  }
+
+  .spec-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:20px; background: #fff;}
+  .spec-table th{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#555;text-align:left;padding:14px 16px;background:#f9f6f0;position:sticky;top:78px}
+  .spec-table td{padding:14px 16px;border-bottom:1px solid #e2d8c3; color: #222;}
+  .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:#444;width:220px}
   .spec-table tr:last-child td{border-bottom:none}
   
   .image-placeholder-box {
-    background: #e2d8c3;
+    background: #e9e4d9;
     border: 2px dashed #b5a991;
     border-radius: 8px;
-    min-height: 220px;
+    min-height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #555;
+    color: #444;
     font-family: "JetBrains Mono", monospace;
     font-size: 13px;
     padding: 20px;
     text-align: center;
-    margin-bottom: 15px;
   }
 
   .color-dots-container {
@@ -49,13 +60,13 @@
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0 0 0 1px #ccc;
-    cursor: pointer;
   }
 
   .grid-two-models {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    padding: 40px 0;
   }
   @media (max-width: 768px) {
     .grid-two-models { grid-template-columns: 1fr; }
@@ -67,34 +78,45 @@
     gap: 10px;
     margin: 15px 0;
     font-size: 13.5px;
+    padding: 0;
   }
   .features-inline-list li {
     list-style: none;
     padding-left: 20px;
     position: relative;
+    color: #333;
   }
   .features-inline-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: green;
+    color: #2e7d32;
     font-weight: bold;
   }
 
-  .calc-box{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;box-shadow:var(--shadow-card)}
-  .calc-box label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;margin-top:16px}
+  .calc-box{background:#ffffff;border:1px solid #e2d8c3;border-radius:12px;padding:28px;box-shadow: 0 4px 12px rgba(0,0,0,0.05);}
+  .calc-box label{display:block;font-size:13px;font-weight:600;color:#444;margin-bottom:6px;margin-top:16px}
   .calc-box input[type=range]{width:100%}
-  .calc-box select{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);font-family:"Hind",sans-serif;font-size:15px;background:var(--paper)}
-  .calc-result{margin-top:20px;padding:16px;background:var(--paper-warm);border-radius:10px;font-size:14.5px;line-height:1.55}
+  .calc-box select{width:100%;padding:11px 14px;border-radius:10px;border:1px solid #e2d8c3;font-family:"Hind",sans-serif;font-size:15px;background:#fff}
+  .calc-result{margin-top:20px;padding:16px;background:#f9f6f0;border-radius:10px;font-size:14.5px;line-height:1.55; color: #222;}
+  
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px 0;
+  }
+  @media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to content</a>
 
 <header class="site-header">
   <div class="container nav-row">
     <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" style="width:40px;">
         <rect width="40" height="40" rx="10" fill="#1B2A4A"/>
         <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
         <circle cx="29" cy="11" r="3" fill="#C8102E"/>
@@ -118,45 +140,42 @@
 
 <main id="main">
 
-  <!-- ================= PAGE HERO WITH YOUR NEW PHRASING ================= -->
- 
+  <!-- ================= PAGE HERO ================= -->
+  <section style="padding: 60px 0; background: #f9f6f0;">
     <div class="container">
-      <span class="eyebrow" style="color: var(--crimson); text-transform: uppercase; font-weight: 700;">Ride The Future. Own The Change.</span>
-      <h1 style="font-size: clamp(32px, 5vw, 48px); margin-top: 14px; max-width: 800px; font-weight: 800; line-height: 1.15;">
+      <span class="eyebrow" style="color: #C8102E; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Ride The Future. Own The Change.</span>
+      <h1 style="font-size: clamp(32px, 5vw, 48px); margin-top: 14px; max-width: 800px; font-weight: 800; line-height: 1.15; color: #1B2A4A;">
         Share Your Story: The Ultimate Long-Range Revolution.
       </h1>
-      <p style="font-size: 18px; color: var(--ink-soft); margin-top: 16px; max-width: 650px; line-height: 1.6;">
-        Tell us about your ride on the groundbreaking <strong style="color:var(--indigo-deep)">SYS EV M5</strong>—engineered with highest-in-market battery range, or rule city traffic elegantly with the ultra-smart <strong style="color:var(--indigo-deep)">SYS EV FX</strong>.
+      <p style="font-size: 18px; color: #444; margin-top: 16px; max-width: 650px; line-height: 1.6;">
+        Tell us about your ride on the groundbreaking <strong>SYS EV M5</strong>—engineered with highest-in-market battery range, or rule city traffic elegantly with the ultra-smart <strong>SYS EV FX</strong>.
       </p>
     </div>
   </section>
 
   <!-- ================= MODEL SECTIONS ================= -->
-  <section class="section-tight">
+  <section style="padding: 40px 0; background: #ffffff;">
     <div class="container">
       <div class="grid-two-models">
 
         <!-- SYS EV FX CARD -->
-        <div class="card reveal" style="overflow:hidden; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background: #fff;">
           <div>
-            <!-- IMAGE PLACEHOLDER FOR FX -->
             <div class="image-placeholder-box">
               <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
               <span style="margin-top:10px; font-weight:600;">SYS EV FX Image Here</span>
-              <span style="font-size:11px; color:#777; margin-top:4px;">Replace src with "fx sys orange.jpg" or "fxmodelrosepink.jpg"</span>
-              <!-- When ready, uncomment below and delete the placeholder style text: -->
-              <!-- <img src="fx sys orange.jpg" alt="SYS EV FX" style="width:100%; height:auto; object-fit:contain;"> -->
+              <span style="font-size:11px; color:#555; margin-top:4px;">Replace src with "fx sys orange.jpg" once uploaded</span>
             </div>
 
             <div style="padding: 26px;">
-              <div class="pill" style="margin-bottom: 12px; background: #eef2f7; color: var(--brand-blue)">SMART. POWERFUL. PREMIUM.</div>
-              <h2 style="font-size: 28px; margin: 0 0 8px 0;">SYS EV FX</h2>
-              <p style="color: var(--ink-soft); font-size: 14.5px; margin-bottom: 15px;">
+              <div class="pill" style="display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 100px; margin-bottom: 12px; background: #eef2f7; color: #1B2A4A">SMART. POWERFUL. PREMIUM.</div>
+              <h2 style="font-size: 28px; margin: 0 0 8px 0; color: #1B2A4A;">SYS EV FX</h2>
+              <p style="color: #555; font-size: 14.5px; margin-bottom: 15px; line-height: 1.5;">
                 Designed for swift urban movement. Equipped with a 2500W Yuma Liquid-Cooled Motor and high safety protections.
               </p>
 
               <div class="color-dots-container">
-                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px;">Colours:</span>
+                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
                 <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
                 <div class="color-dot" style="background: #E86F88;" title="Metallic Rose Pink"></div>
                 <div class="color-dot" style="background: #7EC0EE;" title="Sky Blue"></div>
@@ -174,37 +193,34 @@
           </div>
 
           <div style="padding: 0 26px 26px 26px;">
-            <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 15px;">
-              <span style="font-size: 12px; color: var(--ink-soft); display:block;">Starting Price (NRS)</span>
-              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: var(--indigo-deep)">Rs 2,10,000</span>
+            <div style="margin-top: 10px; border-top: 1px solid #e2d8c3; padding-top: 15px;">
+              <span style="font-size: 12px; color: #555; display:block;">Starting Price (NRS)</span>
+              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: #1B2A4A">Rs 2,10,000</span>
             </div>
-            <a href="#specs-fx" class="btn btn-outline btn-block" style="margin-top: 16px;">Detailed Specs & Options</a>
+            <a href="#specs-fx" class="btn btn-outline btn-block" style="margin-top: 16px; display: block; text-align: center; border: 1px solid #1B2A4A; padding: 10px; border-radius: 6px; text-decoration: none; color: #1B2A4A; font-weight: 600;">Detailed Specs & Options</a>
           </div>
         </div>
 
         <!-- SYS EV M5 CARD -->
-        <div class="card reveal" style="overflow:hidden; border: 2px solid var(--brand-orange); position: relative; display: flex; flex-direction: column; justify-content: space-between;">
-          <div style="position: absolute; top: 16px; right: 16px; background: var(--brand-orange); color: white; font-family: JetBrains Mono; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2;">HIGHEST RANGE IN MARKET</div>
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid #F5A623 !important; position: relative; background: #fff;">
+          <div style="position: absolute; top: 16px; right: 16px; background: #F5A623; color: white; font-family: JetBrains Mono; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2;">HIGHEST RANGE IN MARKET</div>
           
           <div>
-            <!-- IMAGE PLACEHOLDER FOR M5 -->
-            <div class="image-placeholder-box" style="background: #fdfaf4;">
-              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            <div class="image-placeholder-box">
+              <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 00-1.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
               <span style="margin-top:10px; font-weight:600;">SYS EV M5 Image Here</span>
-              <span style="font-size:11px; color:#777; margin-top:4px;">Replace src with "M5 ORANGE SYS EV.jpg" or "M5GREENSYSEV.jpg"</span>
-              <!-- When ready, uncomment below and delete the placeholder style text: -->
-              <!-- <img src="M5 ORANGE SYS EV.jpg" alt="SYS EV M5" style="width:100%; height:auto; object-fit:contain;"> -->
+              <span style="font-size:11px; color:#555; margin-top:4px;">Replace src with "M5 ORANGE SYS EV.jpg" once uploaded</span>
             </div>
 
             <div style="padding: 26px;">
-              <div class="pill" style="margin-bottom: 12px; background: rgba(245,166,35,.15); border-color: rgba(245,166,35,.4); color: var(--brand-orange)">THE LONG-RANGE REVOLUTION</div>
-              <h2 style="font-size: 28px; margin: 0 0 8px 0;">SYS EV M5</h2>
-              <p style="color: var(--ink-soft); font-size: 14.5px; margin-bottom: 15px;">
+              <div class="pill" style="display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 100px; margin-bottom: 12px; background: rgba(245,166,35,.15); color: #F5A623">THE LONG-RANGE REVOLUTION</div>
+              <h2 style="font-size: 28px; margin: 0 0 8px 0; color: #1B2A4A;">SYS EV M5</h2>
+              <p style="color: #555; font-size: 14.5px; margin-bottom: 15px; line-height: 1.5;">
                 Conquer extreme trips with total peace of mind. Outfitted with massive battery capabilities and rugged structures built for Nepal's terrain.
               </p>
 
               <div class="color-dots-container">
-                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px;">Colours:</span>
+                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
                 <div class="color-dot" style="background: #4A773C;" title="Forest Green"></div>
                 <div class="color-dot" style="background: #F5A623;" title="Premium Orange"></div>
                 <div class="color-dot" style="background: #D81B60;" title="Crimson Pink"></div>
@@ -222,11 +238,11 @@
           </div>
 
           <div style="padding: 0 26px 26px 26px;">
-            <div style="margin-top: 10px; border-top: 1px solid var(--line); padding-top: 15px;">
-              <span style="font-size: 12px; color: var(--ink-soft); display:block;">Fixed Price (NRS)</span>
+            <div style="margin-top: 10px; border-top: 1px solid #e2d8c3; padding-top: 15px;">
+              <span style="font-size: 12px; color: #555; display:block;">Fixed Price (NRS)</span>
               <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: #D04A02;">Rs 3,85,000</span>
             </div>
-            <a href="#specs-m5" class="btn btn-primary btn-block" style="margin-top: 16px;">Detailed Specs & Options</a>
+            <a href="#specs-m5" class="btn btn-primary btn-block" style="margin-top: 16px; display: block; text-align: center; background: #1B2A4A; padding: 10px; border-radius: 6px; text-decoration: none; color: #fff; font-weight: 600;">Detailed Specs & Options</a>
           </div>
         </div>
 
@@ -234,51 +250,53 @@
     </div>
   </section>
 
-  <!-- ================= DYNAMIC ESTIMATION RANGE CALCULATOR ================= -->
-  <section style="background: var(--paper-warm); padding: 56px 0;">
-    <div class="container grid-2">
-      <div class="reveal">
-        <span class="eyebrow">Plan Your Adventures</span>
-        <h2 style="margin-top:10px; font-size:clamp(24px,3.2vw,32px)">How long can your story go?</h2>
-        <p style="color:var(--ink-soft); margin-top:14px; line-height: 1.6;">
-          Select a battery option and adjust your standard weekly usage patterns. Our system calculates estimated target intervals before needing your next plug-in charge.
-        </p>
-      </div>
-      <div class="calc-box reveal">
-        <form id="rangeCalc">
-          <label for="model">Choose Variant Configuration</label>
-          <select id="model" name="model">
-            <option value="95">FX — 72V 35Ah Graphene/LFP (95 km average)</option>
-            <option value="175">FX — 72V 55Ah LFP Flagship (175 km average)</option>
-            <option value="340" selected>M5 — 72V 120Ah Ultra Premium (340 km average)</option>
-          </select>
-          <label for="daily">Estimated Daily Commute Distance: <strong><span id="dailyVal">40</span> km</strong></label>
-          <input type="range" id="daily" name="daily" min="10" max="150" value="40" step="5">
-        </form>
-        <div class="calc-result" id="rangeCalcResult">
-          Loading smart statistics computation...
+  <!-- ================= RANGE CALCULATOR ================= -->
+  <section style="background: #f9f6f0; padding: 60px 0;">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <span class="eyebrow" style="color: #F5A623; text-transform: uppercase; font-weight: 700;">Plan Your Adventures</span>
+          <h2 style="margin-top:10px; font-size:clamp(24px,3.2vw,32px); color: #1B2A4A;">How long can your story go?</h2>
+          <p style="color:#555; margin-top:14px; line-height: 1.6;">
+            Select a battery option and adjust your standard daily mileage. Our system calculates estimated intervals before needing your next plug-in charge.
+          </p>
+        </div>
+        <div class="calc-box">
+          <form id="rangeCalc">
+            <label for="model">Choose Variant Configuration</label>
+            <select id="model" name="model">
+              <option value="95">FX — 72V 35Ah Graphene/LFP (95 km average)</option>
+              <option value="175">FX — 72V 55Ah LFP Flagship (175 km average)</option>
+              <option value="340" selected>M5 — 72V 120Ah Ultra Premium (340 km average)</option>
+            </select>
+            <label for="daily">Estimated Daily Commute Distance: <strong><span id="dailyVal">40</span> km</strong></label>
+            <input type="range" id="daily" name="daily" min="10" max="150" value="40" step="5">
+          </form>
+          <div class="calc-result" id="rangeCalcResult">
+            Loading configuration data...
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= FULL SPECIFICATION DATA TABLES ================= -->
-  <section>
+  <section style="padding: 60px 0; background: #fff;">
     <div class="container">
-      <div class="section-head reveal" style="text-align: center; margin-bottom: 45px;">
-        <span class="eyebrow">Technical Matrix</span>
-        <h2>Deep Specification Compare</h2>
+      <div style="text-align: center; margin-bottom: 45px;">
+        <span class="eyebrow" style="color: #555; font-weight: 600;">Technical Matrix</span>
+        <h2 style="color: #1B2A4A;">Deep Specification Compare</h2>
       </div>
 
       <!-- FX VARIANT BLOCK -->
-      <div id="specs-fx" class="reveal" style="margin-bottom: 60px;">
-        <h3 style="font-size:22px; margin-bottom:12px; color: var(--brand-blue); display: flex; justify-content: space-between; align-items: baseline;">
+      <div id="specs-fx" style="margin-bottom: 60px;">
+        <h3 style="font-size:22px; margin-bottom:12px; color: #1B2A4A; display: flex; justify-content: space-between; align-items: baseline;">
           <span>SYS EV FX Detailed Specs</span>
           <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
         </h3>
         
-        <div class="card" style="overflow:auto">
-          <table class="spec-table">
+        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
+          <table class="spec-table" style="margin-bottom: 0;">
             <tr><th>Technical Attribute</th><th>Factory Specification Detail Data</th></tr>
             <tr><td>Motor Profile</td><td>All-new Yuma Liquid-Cooled Pure Copper 2500W 12-inch Motor</td></tr>
             <tr><td>Braking Elements</td><td>Front & Rear Disc Brakes (180mm Front / 180mm Rear System)</td></tr>
@@ -290,27 +308,29 @@
           </table>
         </div>
 
-        <h4 style="margin: 20px 0 10px 0; font-size:16px;">FX Battery Configuration & Pricing Matrix</h4>
-        <div class="card" style="overflow:auto">
+        <h4 style="margin: 20px 0 10px 0; font-size:16px; color: #333;">FX Battery Configuration & Pricing Matrix</h4>
+        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
           <table class="spec-table" style="margin-bottom: 0;">
-            <tr style="background: #fdfdfd;"><td style="font-weight:bold;">Battery Pack Configuration</td><td style="font-weight:bold;">Cell Chemistry Type</td><td style="font-weight:bold;">Tested Range Range</td><td style="font-weight:bold;">Ex-Showroom Price (NRS)</td><td style="font-weight:bold;">Warranty Tier</td></tr>
+            <tr style="background: #fdfdfd; font-weight: bold; color: #444;">
+              <td>Battery Pack</td><td>Cell Type</td><td>Tested Range</td><td>Price (NRS)</td><td>Warranty Tier</td>
+            </tr>
             <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,10,000</strong></td><td>1 Year Factory Coverage</td></tr>
             <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,35,000</strong></td><td>2 Years Factory Coverage</td></tr>
-            <tr><td>72V 35Ah</td><td>LFP (Lithium Iron Phosphate)</td><td>90 - 100 km</td><td><strong>NRs 2,50,000</strong></td><td>3 Years Core Protection</td></tr>
-            <tr><td>72V 55Ah</td><td>LFP (Lithium Iron Phosphate)</td><td>150 - 200 km</td><td><strong>NRs 3,00,000</strong></td><td>3 Years Core Protection</td></tr>
+            <tr><td>72V 35Ah</td><td>LFP</td><td>90 - 100 km</td><td><strong>NRs 2,50,000</strong></td><td>3 Years Core Protection</td></tr>
+            <tr><td>72V 55Ah</td><td>LFP</td><td>150 - 200 km</td><td><strong>NRs 3,00,000</strong></td><td>3 Years Core Protection</td></tr>
           </table>
         </div>
       </div>
 
       <!-- M5 VARIANT BLOCK -->
-      <div id="specs-m5" class="reveal" style="margin-bottom: 40px;">
+      <div id="specs-m5" style="margin-bottom: 40px;">
         <h3 style="font-size:22px; margin-bottom:12px; color: #D04A02; display: flex; justify-content: space-between; align-items: baseline;">
           <span>SYS EV M5 Detailed Specs</span>
           <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
         </h3>
         
-        <div class="card" style="overflow:auto">
-          <table class="spec-table">
+        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
+          <table class="spec-table" style="margin-bottom: 0;">
             <tr><th>Technical Attribute</th><th>Factory Specification Detail Data</th></tr>
             <tr><td>Powertrain System</td><td>All-new Yuma liquid-cooled pure copper 2500W 12-inch motor</td></tr>
             <tr><td>Battery Pack Assembly</td><td>72V 120Ah Massive LFP (Max Capacity, Maximum Performance Yield)</td></tr>
@@ -326,39 +346,20 @@
     </div>
   </section>
 
-  <!-- ================= BRAND CTA ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div style="background:var(--crimson); border-radius:var(--radius-lg); padding:56px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; color:white">
-        <div>
-          <h2 style="font-size:clamp(22px,3vw,30px); color:white">Ready to change how you ride?</h2>
-          <p style="margin-top:8px; color:rgba(255,255,255,.85)">Secure your test ride window across Kathmandu Valley now.</p>
-        </div>
-        <a href="test-ride.html" class="btn btn-marigold">Book a Test Ride Now</a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" style="background:#1B2A4A; color:#faf6ef; padding: 40px 0;">
   <div class="container">
-    <div class="footer-grid">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
       <div>
-        <div class="footer-brand">
-          <svg class="mark" viewBox="0 0 40 40" fill="none">
-            <rect width="40" height="40" rx="10" fill="#F5A623"/>
-            <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#1B2A4A"/>
-          </svg>
-          SYS EV Pvt. Ltd.
-        </div>
-        <p style="font-size:14px; max-width:280px; color:rgba(250,246,239,.6)">
+        <h4 style="color:#fff; margin-bottom: 10px;">SYS EV Pvt. Ltd.</h4>
+        <p style="font-size:14px; max-width:280px; color:rgba(250,246,239,.6); margin: 0;">
           Premium Electric Scooters built explicitly for rugged Nepali streets. Engineered for endurance.
         </p>
       </div>
-      <div class="footer-col">
-        <h4>Authorized Contact Info</h4>
-        <ul style="color: rgba(250,246,239,.8); font-size: 13.5px; list-style:none; padding:0;">
+      <div>
+        <h4 style="color:#fff; margin-bottom: 10px;">Authorized Contact</h4>
+        <ul style="color: rgba(250,246,239,.8); font-size: 13.5px; list-style:none; padding:0; margin: 0; line-height: 1.8;">
           <li>📞 +977 9766801639</li>
           <li>✉️ sys-ev@outlook.com</li>
           <li>🌐 www.sysev.com.np</li>
@@ -366,21 +367,17 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 SYS EV Pvt. Ltd. All rights reserved.</span>
-      <span>Made in Nepal 🇳🇵</span>
-    </div>
   </div>
 </footer>
 
 <script>
-  // Advanced Interactive Range Calculation Mechanics
   const dailySlider = document.getElementById('daily');
   const dailyVal = document.getElementById('dailyVal');
   const modelSelect = document.getElementById('model');
   const calcResult = document.getElementById('rangeCalcResult');
 
   function updateCalculation() {
+    if (!dailySlider || !modelSelect || !calcResult) return;
     const dailyDistance = parseInt(dailySlider.value, 10);
     const capacityRange = parseInt(modelSelect.value, 10);
     dailyVal.textContent = dailyDistance;
@@ -397,7 +394,7 @@
   if (dailySlider && modelSelect) {
     dailySlider.addEventListener('input', updateCalculation);
     modelSelect.addEventListener('change', updateCalculation);
-    updateCalculation(); // Initial trigger calculation
+    updateCalculation();
   }
 </script>
 </body>
