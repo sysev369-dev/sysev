@@ -1,230 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us — SYSEV Pvt. Ltd.</title>
-<meta name="description" content="Get in touch with SYSEV Pvt. Ltd. for sales, service, dealership, or general inquiries.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>
-  .contact-form .field{margin-bottom:20px}
-  .contact-form label{display:block;font-size:13.5px;font-weight:600;color:var(--ink-soft);margin-bottom:7px}
-  .contact-form input, .contact-form select, .contact-form textarea{
-    width:100%;padding:13px 16px;border-radius:10px;border:1px solid var(--line);
-    font-family:"Hind",sans-serif;font-size:15px;background:var(--white);
-  }
-  .contact-form textarea{resize:vertical;min-height:120px}
-  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{border-color:var(--crimson)}
-  .form-success{display:none;margin-top:18px;padding:16px 18px;background:rgba(46,158,91,.12);border:1px solid rgba(46,158,91,.3);border-radius:10px;color:#1f7a44;font-size:14.5px}
-  .contact-info-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
-  .contact-info-item:last-child{border-bottom:none}
-  .contact-info-item .icon{width:42px;height:42px;border-radius:12px;background:var(--paper-warm);display:grid;place-items:center;flex:none;font-size:18px}
-</style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/sys-ev-emblem.png">
+  <title>Contact SYS EV Nepal</title>
+  <meta name="description" content="Call, email, WhatsApp or visit SYS EV in Chandragiri, Kathmandu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<a href="#main" class="skip-link">Skip to content</a>
-
-<header class="site-header">
-  <div class="container nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="#1B2A4A"/>
-        <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
-        <circle cx="29" cy="11" r="3" fill="#C8102E"/>
-      </svg>
-      <span class="brand-stack">SYSEV<span class="tag">Pvt. Ltd. · Nepal</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html">Showrooms</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="test-ride.html" class="btn btn-primary btn-sm">Book a Test Ride</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="container">
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html">Showrooms / Dealers</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="test-ride.html">Book a Test Ride</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
-  <section style="padding-bottom:0;background:var(--paper-warm)">
-    <div class="container">
-      <span class="eyebrow">Talk to us</span>
-      <h1 style="font-size:clamp(32px,5vw,52px);margin-top:14px;max-width:620px">Questions, feedback, or a dealership idea — we're listening.</h1>
-    </div>
-  </section>
-
-  <section>
-    <div class="container grid-2" style="align-items:flex-start">
-
-      <div class="card reveal" style="padding:36px">
-        <h2 style="font-size:22px;margin-bottom:6px">Send us a message</h2>
-        <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:22px">We typically reply within one business day.</p>
-        <form class="contact-form" id="contactForm">
-          <div class="field">
-            <label for="cf-name">Full name</label>
-            <input type="text" id="cf-name" required>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a><header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="crumb"><a href="index.html">Home</a> / Contact</p>
+        <span class="eyebrow" style="margin-top:28px">Talk to SYS EV</span>
+        <h1 class="display">Questions, answered by a person.</h1>
+        <p class="section-copy">Ask about stock, battery options, warranty, pricing or a test ride. Call directly or send a WhatsApp enquiry.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Contact details</span>
+          <h2 class="section-title">We're easy to reach.</h2>
+          <div class="contact-list">
+            <div class="contact-item"><i data-lucide="phone"></i><div><small>Phone / WhatsApp</small><a href="tel:+9779714571009">+977-9714571009</a></div></div>
+            <div class="contact-item"><i data-lucide="mail"></i><div><small>Email</small><a href="mailto:sys-ev@outlook.com">sys-ev@outlook.com</a></div></div>
+            <div class="contact-item"><i data-lucide="map-pin"></i><div><small>Address</small><a href="https://maps.app.goo.gl/q1CazRJc4amtG4V78?g_st=aw" target="_blank" rel="noopener">Kanchhan Basti, Chandragiri-10, Kathmandu</a></div></div>
+            <div class="contact-item"><i data-lucide="clock-3"></i><div><small>Showroom hours</small><span>Sun-Fri 10am-6pm &middot; Sat 11am-4pm</span></div></div>
           </div>
-          <div class="field">
-            <label for="cf-email">Email address</label>
-            <input type="email" id="cf-email" required>
+        </div>
+        <form class="form-shell" id="enquiry" data-whatsapp-form>
+          <div class="form-grid">
+            <div class="field"><label for="contact-name">Name</label><input id="contact-name" name="Name" required></div>
+            <div class="field"><label for="contact-phone">Phone</label><input id="contact-phone" name="Phone" type="tel" required></div>
+            <div class="field full"><label for="contact-topic">I want to ask about</label><select id="contact-topic" name="Topic"><option value="m5">M5</option><option value="fx">FX</option><option value="price">Price and availability</option><option value="service">Service or warranty</option><option value="dealer">Become a dealer</option><option value="other">Other</option></select></div>
+            <div class="field full"><label for="contact-message">Message</label><textarea id="contact-message" name="Message" placeholder="How can we help?"></textarea></div>
+            <div class="field full"><button class="btn btn-block" type="submit"><i data-lucide="message-circle"></i> Send on WhatsApp</button></div>
           </div>
-          <div class="field">
-            <label for="cf-phone">Phone number</label>
-            <input type="tel" id="cf-phone" placeholder="98XXXXXXXX">
-          </div>
-          <div class="field">
-            <label for="cf-topic">What's this about?</label>
-            <select id="cf-topic">
-              <option>General inquiry</option>
-              <option>Sales — Scooters</option>
-              <option>Service & warranty</option>
-              <option>Become a dealer</option>
-              <option>Press & media</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-note">Submitting opens WhatsApp with your enquiry ready to send.</p>
+          <div class="form-success">Your message is ready in WhatsApp.</div>
         </form>
-        <div class="form-success" id="formSuccess">Thanks — your message has been sent. Our team will get back to you within one business day.</div>
       </div>
-
-      <div class="reveal">
-        <div class="card" style="padding:36px;margin-bottom:24px">
-          <h2 style="font-size:22px;margin-bottom:6px">Reach us directly</h2>
-          <div class="contact-info-item">
-            <div class="icon">📍</div>
-            <div>
-              <p style="font-weight:600">Head Office</p>
-              <p style="color:var(--ink-soft);font-size:14.5px;margin-top:2px">Balkhu, Kathmandu, Bagmati Province, Nepal</p>
-            </div>
+    </section>
+    <section class="ride-matcher" data-ride-matcher>
+      <div class="container">
+        <div class="ride-matcher-head">
+          <div>
+            <span class="eyebrow">Find your SYS EV</span>
+            <h2>One question.<br>A clearer choice.</h2>
           </div>
-          <div class="contact-info-item">
-            <div class="icon">📞</div>
-            <div>
-              <p style="font-weight:600">Phone</p>
-              <p style="color:var(--ink-soft);font-size:14.5px;margin-top:2px">+977-9766801639 (Sun–Fri, 10am–8pm)</p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">✉️</div>
-            <div>
-              <p style="font-weight:600">Email</p>
-              <p style="color:var(--ink-soft);font-size:14.5px;margin-top:2px">hello@sysev.com.np · service@sysev.com.np</p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">🕘</div>
-            <div>
-              <p style="font-weight:600">Showroom hours</p>
-              <p style="color:var(--ink-soft);font-size:14.5px;margin-top:2px">Sun–Fri 10am–6pm · Sat 11am–4pm</p>
-            </div>
-          </div>
+          <p>Set your approximate daily travel and choose what matters more. We will point you towards a sensible starting configuration.</p>
         </div>
 
-        <div class="card" style="padding:8px;overflow:hidden">
-          <svg viewBox="0 0 460 260" style="width:100%;border-radius:10px">
-            <rect width="460" height="260" fill="#EFE7D2"/>
-            <path d="M20 220 Q140 60 240 100 Q340 130 440 70" stroke="#E2D8C3" stroke-width="20" fill="none" stroke-linecap="round"/>
-            <circle cx="230" cy="100" r="10" fill="#C8102E"/>
-            <text x="245" y="98" font-family="Poppins" font-size="13" fill="#1A1610" font-weight="600">Head Office, Pulchowk</text>
-          </svg>
+        <div class="ride-matcher-tool">
+          <div class="ride-input-panel">
+            <div class="ride-distance-label">
+              <label for="dailyRide">Your daily travel</label>
+              <output for="dailyRide"><strong data-match-distance>35</strong><span>km / day</span></output>
+            </div>
+            <input id="dailyRide" data-match-range type="range" min="10" max="160" step="5" value="35" aria-label="Daily travel distance in kilometres">
+            <div class="ride-range-scale"><span>10 km</span><span>City + outskirts</span><span>160 km</span></div>
+
+            <fieldset class="ride-priority">
+              <legend>For shorter rides, prioritise</legend>
+              <button class="active" type="button" data-match-priority="value"><i data-lucide="badge-dollar-sign"></i> Lowest price</button>
+              <button type="button" data-match-priority="warranty"><i data-lucide="shield-check"></i> Longer warranty</button>
+            </fieldset>
+          </div>
+
+          <div class="ride-result" aria-live="polite">
+            <span class="ride-result-kicker">Recommended starting point</span>
+            <div class="ride-result-title">
+              <div>
+                <h3 data-match-model>SYS EV FX</h3>
+                <p data-match-variant>72V-38Ah Graphene / 1-year warranty</p>
+              </div>
+              <span data-match-price>NPR 210,000</span>
+            </div>
+            <p class="ride-result-reason" data-match-reason>A value-focused fit for shorter daily routes.</p>
+            <div class="ride-result-stats">
+              <div><small>Claimed range*</small><strong data-match-claimed-range>90-100 km</strong></div>
+              <div><small>Ideal-charge rhythm*</small><strong data-match-days>About 2 days</strong></div>
+            </div>
+            <a class="btn btn-dark" data-match-link href="scooters.html">Explore this configuration <i data-lucide="arrow-right"></i></a>
+          </div>
         </div>
+        <p class="ride-matcher-note">*This tool is an indicative starting point, not a real-world range guarantee. Actual range and charging frequency vary with riding conditions, load, terrain, weather, speed, and battery condition.</p>
       </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg class="mark" viewBox="0 0 40 40" fill="none">
-            <rect width="40" height="40" rx="10" fill="#F5A623"/>
-            <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#1B2A4A"/>
-          </svg>
-          SYSEV Pvt. Ltd.
-        </div>
-        <p style="font-size:14px;max-width:280px;color:rgba(250,246,239,.6)">Electric scooters built for Nepal's roads — with electric bikes and cars on the way. Registered in Kathmandu, Nepal.</p>
-        <div class="social-row" style="margin-top:20px">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.4-9.4a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 7.5s-.2-1.6-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 4 12 4 12 4s-4.4 0-7.2.4c-.4 0-1.2.1-2 .9C2.2 5.9 2 7.5 2 7.5S1.8 9.3 1.8 11v1.9c0 1.8.2 3.5.2 3.5s.2 1.6.8 2.2c.8.8 1.8.8 2.3.9 1.6.2 7 .4 7 .4s4.4 0 7.2-.4c.4 0 1.2-.1 2-.9.6-.6.8-2.2.8-2.2s.2-1.8.2-3.5V11c0-1.8-.2-3.5-.2-3.5zM9.9 14.6V8.9l5.8 2.9-5.8 2.8z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="scooters.html">Scooters</a></li>
-          <li><a href="coming-soon.html">Coming Soon</a></li>
-          <li><a href="dealers.html">Showrooms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="test-ride.html">Book a Test Ride</a></li>
-          <li><a href="contact.html">Service & Warranty</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Head Office</h4>
-        <ul>
-          <li>SYSEV Pvt. Ltd.</li>
-          <li>Pulchowk, Lalitpur,<br>Bagmati Province, Nepal</li>
-          <li>+977-1-5970000</li>
-          <li>hello@sysev.com.np</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 SYSEV Pvt. Ltd. All rights reserved. Company Reg. No. 123456/079/080.</span>
-      <span>Made in Nepal 🇳🇵</span>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/main.js"></script>
-<script>
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      document.getElementById('formSuccess').style.display = 'block';
-      contactForm.reset();
-    });
-  }
-</script>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script src="assets/main.js"></script>
 </body>
 </html>

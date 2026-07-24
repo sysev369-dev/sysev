@@ -1,266 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Showrooms & Dealers — SYSEV Pvt. Ltd.</title>
-<meta name="description" content="Find a SYSEV showroom or authorized dealer near you in the Kathmandu Valley and beyond.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>
-  .city-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-  .city-filter button{
-    font-family:"Poppins",sans-serif;font-size:13.5px;font-weight:600;padding:9px 18px;border-radius:100px;
-    border:1px solid var(--line);background:var(--white);cursor:pointer;color:var(--ink-soft);transition:all .15s;
-  }
-  .city-filter button.active{background:var(--crimson);color:white;border-color:var(--crimson)}
-  .dealer-card{display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:24px;align-items:center}
-  @media(max-width:760px){.dealer-card{grid-template-columns:1fr;text-align:left}}
-  .dealer-hours{font-size:13px;color:var(--ink-soft);margin-top:6px}
-  .dealer-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-  .dealer-tag{font-size:11.5px;background:var(--paper-warm);padding:4px 10px;border-radius:100px;color:var(--ink-soft);font-weight:600}
-</style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/sys-ev-emblem.png">
+  <title>Visit SYS EV | Chandragiri, Kathmandu</title>
+  <meta name="description" content="Visit SYS EV at Kanchhan Basti, Chandragiri-10, Kathmandu. Get directions or call ahead.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<a href="#main" class="skip-link">Skip to content</a>
-
-<header class="site-header">
-  <div class="container nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="#1B2A4A"/>
-        <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
-        <circle cx="29" cy="11" r="3" fill="#C8102E"/>
-      </svg>
-      <span class="brand-stack">SYSEV<span class="tag">Pvt. Ltd. · Nepal</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html" class="active">Showrooms</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="test-ride.html" class="btn btn-primary btn-sm">Book a Test Ride</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="container">
-    <nav class="mobile-nav" aria-label="Mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html" class="active">Showrooms / Dealers</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="test-ride.html">Book a Test Ride</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ================= PAGE HERO ================= -->
-  <section style="padding-bottom:0;background:var(--paper-warm)">
-    <div class="container">
-      <span class="eyebrow">Visit us</span>
-      <h1 style="font-size:clamp(32px,5vw,52px);margin-top:14px;max-width:680px">Showrooms across the valley, with more on the way.</h1>
-      <p style="font-size:17px;color:var(--ink-soft);margin-top:16px;max-width:560px">Sit on a scooter, talk financing with our team, or drop in for a service appointment — no booking required for showroom visits.</p>
-    </div>
-  </section>
-
-  <!-- ================= MAP ================= -->
-  <section class="section-tight">
-    <div class="container">
-      <div class="card reveal" style="padding:8px;overflow:hidden">
-        <svg viewBox="0 0 1000 420" style="width:100%;border-radius:10px" id="dealerMap">
-          <rect width="1000" height="420" fill="#EFE7D2"/>
-          <path d="M40 360 Q150 120 320 180 Q480 230 620 130 Q760 60 960 140" stroke="#E2D8C3" stroke-width="34" fill="none" stroke-linecap="round"/>
-          <path d="M40 360 Q150 120 320 180 Q480 230 620 130 Q760 60 960 140" stroke="#FAF6EF" stroke-width="3" stroke-dasharray="10 10" fill="none"/>
-
-          <g class="map-pin" data-city="kathmandu" transform="translate(220,200)">
-            <circle r="16" fill="#C8102E"/>
-            <circle r="6" fill="white"/>
-            <text x="0" y="-26" font-family="Poppins" font-size="15" font-weight="600" fill="#1A1610" text-anchor="middle">Kathmandu</text>
-          </g>
-          <g class="map-pin" data-city="lalitpur" transform="translate(380,205)">
-            <circle r="16" fill="#C8102E"/>
-            <circle r="6" fill="white"/>
-            <text x="0" y="-26" font-family="Poppins" font-size="15" font-weight="600" fill="#1A1610" text-anchor="middle">Lalitpur</text>
-          </g>
-          <g class="map-pin" data-city="bhaktapur" transform="translate(560,150)">
-            <circle r="16" fill="#C8102E"/>
-            <circle r="6" fill="white"/>
-            <text x="0" y="-26" font-family="Poppins" font-size="15" font-weight="600" fill="#1A1610" text-anchor="middle">Bhaktapur</text>
-          </g>
-          <g class="map-pin" data-city="pokhara" transform="translate(120,330)">
-            <circle r="14" fill="#1B2A4A"/>
-            <circle r="5" fill="#F5A623"/>
-            <text x="0" y="28" font-family="Poppins" font-size="14" font-weight="600" fill="#1A1610" text-anchor="middle">Pokhara</text>
-            <text x="0" y="46" font-family="JetBrains Mono" font-size="10" fill="#5B5246" text-anchor="middle">opening Q3</text>
-          </g>
-        </svg>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a><header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="crumb"><a href="index.html">Home</a> / Visit</p>
+        <span class="eyebrow" style="margin-top:28px">Visit SYS EV</span>
+        <h1 class="display">See the scooter in Chandragiri.</h1>
+        <p class="section-copy">View the M5 and FX, compare available colours and speak with the team about the right battery option.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= FILTER + LIST ================= -->
-  <section class="section-tight">
-    <div class="container" style="max-width:880px">
-      <div class="city-filter" id="cityFilter">
-        <button class="active" data-city="all">All Cities</button>
-        <button data-city="kathmandu">Kathmandu</button>
-        <button data-city="lalitpur">Lalitpur</button>
-        <button data-city="bhaktapur">Bhaktapur</button>
-      </div>
-
-      <div style="display:flex;flex-direction:column;gap:18px" id="dealerList">
-
-        <div class="card dealer-card" data-city="kathmandu">
-          <svg viewBox="0 0 200 140" style="border-radius:10px"><rect width="200" height="140" fill="#E2D8C3"/><rect x="30" y="40" width="140" height="70" rx="6" fill="#1B2A4A"/><rect x="50" y="60" width="100" height="35" rx="4" fill="#F5A623"/></svg>
-          <div>
-            <h3 style="font-size:18px">SYSEV Showroom — Putalisadak</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:4px">Putalisadak Chowk, Kathmandu 44600</p>
-            <p class="dealer-hours">Sun–Fri 10am–6pm · Sat 11am–4pm</p>
-            <div class="dealer-tags">
-              <span class="dealer-tag">Test rides</span>
-              <span class="dealer-tag">Financing desk</span>
-              <span class="dealer-tag">Service center</span>
-            </div>
+    </section>
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="map-panel">
+          <h2>Kanchhan Basti</h2>
+          <p>Chandragiri-10, Kathmandu, Nepal.</p>
+          <a class="btn btn-light" href="https://maps.app.goo.gl/q1CazRJc4amtG4V78?g_st=aw" target="_blank" rel="noopener"><i data-lucide="navigation"></i> Open in Google Maps</a>
+        </div>
+        <div>
+          <span class="eyebrow">Plan your visit</span>
+          <h2 class="section-title">Call ahead for current stock.</h2>
+          <p class="section-copy">Colour and battery availability can change. A quick call or WhatsApp message lets the team prepare the model you want to see.</p>
+          <div class="contact-list">
+            <div class="contact-item"><i data-lucide="phone"></i><div><small>Phone</small><a href="tel:+9779714571009">+977-9714571009</a></div></div>
+            <div class="contact-item"><i data-lucide="message-circle"></i><div><small>WhatsApp</small><a href="https://wa.me/9779714571009" target="_blank" rel="noopener">Message SYS EV</a></div></div>
+            <div class="contact-item"><i data-lucide="calendar-check"></i><div><small>Test ride</small><a href="test-ride.html">Request a time</a></div></div>
           </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Get Directions</a>
-        </div>
-
-        <div class="card dealer-card" data-city="lalitpur">
-          <svg viewBox="0 0 200 140" style="border-radius:10px"><rect width="200" height="140" fill="#E2D8C3"/><rect x="30" y="40" width="140" height="70" rx="6" fill="#1B2A4A"/><rect x="50" y="60" width="100" height="35" rx="4" fill="#C8102E"/></svg>
-          <div>
-            <h3 style="font-size:18px">SYSEV Showroom — Pulchowk</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:4px">Pulchowk Road, Lalitpur 44700</p>
-            <p class="dealer-hours">Sun–Fri 10am–6pm · Sat 11am–4pm</p>
-            <div class="dealer-tags">
-              <span class="dealer-tag">Test rides</span>
-              <span class="dealer-tag">Head office</span>
-              <span class="dealer-tag">Service center</span>
-            </div>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Get Directions</a>
-        </div>
-
-        <div class="card dealer-card" data-city="bhaktapur">
-          <svg viewBox="0 0 200 140" style="border-radius:10px"><rect width="200" height="140" fill="#E2D8C3"/><rect x="30" y="40" width="140" height="70" rx="6" fill="#1B2A4A"/><rect x="50" y="60" width="100" height="35" rx="4" fill="#F5A623"/></svg>
-          <div>
-            <h3 style="font-size:18px">SYSEV Authorized Dealer — Suryabinayak</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:4px">Suryabinayak Road, Bhaktapur 44800</p>
-            <p class="dealer-hours">Sun–Fri 10am–5:30pm · Sat closed</p>
-            <div class="dealer-tags">
-              <span class="dealer-tag">Test rides</span>
-              <span class="dealer-tag">Sales only</span>
-            </div>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Get Directions</a>
-        </div>
-
-        <div class="card dealer-card" data-city="kathmandu">
-          <svg viewBox="0 0 200 140" style="border-radius:10px"><rect width="200" height="140" fill="#E2D8C3"/><rect x="30" y="40" width="140" height="70" rx="6" fill="#1B2A4A"/><rect x="50" y="60" width="100" height="35" rx="4" fill="#1B2A4A" opacity=".5"/></svg>
-          <div>
-            <h3 style="font-size:18px">SYSEV Showroom — Boudha</h3>
-            <p style="color:var(--ink-soft);font-size:14.5px;margin-top:4px">Boudha Chowk, Kathmandu 44600</p>
-            <p class="dealer-hours">Sun–Fri 10am–6pm · Sat 11am–4pm</p>
-            <div class="dealer-tags">
-              <span class="dealer-tag">Test rides</span>
-              <span class="dealer-tag">Financing desk</span>
-            </div>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Get Directions</a>
-        </div>
-
-      </div>
-
-      <div class="card reveal" style="margin-top:28px;padding:28px;text-align:center;background:var(--paper-warm);border-style:dashed">
-        <p style="font-weight:600">Not seeing a showroom near you?</p>
-        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px">We're expanding to Pokhara, Chitwan, and Biratnagar next. <a href="coming-soon.html" style="color:var(--crimson);font-weight:600">Get notified</a> when we open near you, or become a dealer.</p>
-        <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:14px">Apply to Become a Dealer</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <svg class="mark" viewBox="0 0 40 40" fill="none">
-            <rect width="40" height="40" rx="10" fill="#F5A623"/>
-            <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#1B2A4A"/>
-          </svg>
-          SYSEV Pvt. Ltd.
-        </div>
-        <p style="font-size:14px;max-width:280px;color:rgba(250,246,239,.6)">Electric scooters built for Nepal's roads — with electric bikes and cars on the way. Registered in Kathmandu, Nepal.</p>
-        <div class="social-row" style="margin-top:20px">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M12 2c2.7 0 3 0 4.1.1 1.1 0 1.8.2 2.2.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.4 1.1.4 2.2.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1.1.4-2.2.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.4-1.1-.4-2.2C2 15 2 14.7 2 12s0-3 .1-4.1c0-1.1.2-1.8.4-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1.1-.4 2.2-.4C8 2 8.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.4-9.4a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FAF6EF"><path d="M22 7.5s-.2-1.6-.8-2.2c-.8-.8-1.6-.8-2-.9C16.4 4 12 4 12 4s-4.4 0-7.2.4c-.4 0-1.2.1-2 .9C2.2 5.9 2 7.5 2 7.5S1.8 9.3 1.8 11v1.9c0 1.8.2 3.5.2 3.5s.2 1.6.8 2.2c.8.8 1.8.8 2.3.9 1.6.2 7 .4 7 .4s4.4 0 7.2-.4c.4 0 1.2-.1 2-.9.6-.6.8-2.2.8-2.2s.2-1.8.2-3.5V11c0-1.8-.2-3.5-.2-3.5zM9.9 14.6V8.9l5.8 2.9-5.8 2.8z"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="scooters.html">Scooters</a></li>
-          <li><a href="coming-soon.html">Coming Soon</a></li>
-          <li><a href="dealers.html">Showrooms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="test-ride.html">Book a Test Ride</a></li>
-          <li><a href="contact.html">Service & Warranty</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Head Office</h4>
-        <ul>
-          <li>SYSEV Pvt. Ltd.</li>
-          <li>Pulchowk, Lalitpur,<br>Bagmati Province, Nepal</li>
-          <li>+977-1-5970000</li>
-          <li>hello@sysev.com.np</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 SYSEV Pvt. Ltd. All rights reserved. Company Reg. No. 123456/079/080.</span>
-      <span>Made in Nepal 🇳🇵</span>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/main.js"></script>
-<script>
-  const filterBtns = document.querySelectorAll('#cityFilter button');
-  const dealerCards = document.querySelectorAll('#dealerList .dealer-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const city = btn.dataset.city;
-      dealerCards.forEach(card => {
-        card.style.display = (city === 'all' || card.dataset.city === city) ? 'grid' : 'none';
-      });
-    });
-  });
-</script>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script src="assets/main.js"></script>
 </body>
 </html>

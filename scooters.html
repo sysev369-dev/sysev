@@ -1,427 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electric Scooters Lineup — SYS EV</title>
-<meta name="description" content="Explore the SYS EV lineup: FX Smart and M5 Long-Range Revolution. Engineered with advanced LFP batteries for Nepal's roads.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<style>
-  :root {
-    --brand-orange: #F5A623;
-    --brand-blue: #1B2A4A;
-    --brand-pink: #E86F88;
-  }
-  
-  /* Hardcoded fallbacks to guarantee visibility even if styles.css fails */
-  .card {
-    background: #ffffff !important;
-    border: 1px solid #e2d8c3 !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    opacity: 1 !important; /* Forces visibility */
-    transform: none !important;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
-
-  .spec-table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:20px; background: #fff;}
-  .spec-table th{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#555;text-align:left;padding:14px 16px;background:#f9f6f0;position:sticky;top:78px}
-  .spec-table td{padding:14px 16px;border-bottom:1px solid #e2d8c3; color: #222;}
-  .spec-table td:first-child, .spec-table th:first-child{font-weight:600;color:#444;width:220px}
-  .spec-table tr:last-child td{border-bottom:none}
-  
-  .image-display-box {
-    background: #fdfdfd;
-    border-bottom: 1px solid #e2d8c3;
-    min-height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .image-display-box img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.25s ease-in-out;
-  }
-
-  .color-dots-container {
-    display: flex;
-    gap: 10px;
-    margin: 16px 0;
-    align-items: center;
-  }
-  .color-dot {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px #ccc;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .color-dot:hover {
-    transform: scale(1.15);
-  }
-  .color-dot.active-dot {
-    box-shadow: 0 0 0 2px var(--brand-blue);
-  }
-
-  .grid-two-models {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    padding: 40px 0;
-  }
-  @media (max-width: 768px) {
-    .grid-two-models { grid-template-columns: 1fr; }
-  }
-
-  .features-inline-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 15px 0;
-    font-size: 13.5px;
-    padding: 0;
-  }
-  .features-inline-list li {
-    list-style: none;
-    padding-left: 20px;
-    position: relative;
-    color: #333;
-  }
-  .features-inline-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #2e7d32;
-    font-weight: bold;
-  }
-
-  .calc-box{background:#ffffff;border:1px solid #e2d8c3;border-radius:12px;padding:28px;box-shadow: 0 4px 12px rgba(0,0,0,0.05);}
-  .calc-box label{display:block;font-size:13px;font-weight:600;color:#444;margin-bottom:6px;margin-top:16px}
-  .calc-box input[type=range]{width:100%}
-  .calc-box select{width:100%;padding:11px 14px;border-radius:10px;border:1px solid #e2d8c3;font-family:"Hind",sans-serif;font-size:15px;background:#fff}
-  .calc-result{margin-top:20px;padding:16px;background:#f9f6f0;border-radius:10px;font-size:14.5px;line-height:1.55; color: #222;}
-  
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 40px 0;
-  }
-  @media (max-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/sys-ev-emblem.png">
+  <title>SYS EV Scooters | Complete M5 & FX Details</title>
+  <meta name="description" content="Explore complete SYS EV M5 and FX specifications, performance, smart features, colours, battery options, warranties and prices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-page="scooters">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header"></header>
 
-<header class="site-header">
-  <div class="container nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" style="width:40px;">
-        <rect width="40" height="40" rx="10" fill="#1B2A4A"/>
-        <path d="M12 28 L20 10 L20 17 L28 17 L20 30 L20 23 L12 23 Z" fill="#F5A623"/>
-        <circle cx="29" cy="11" r="3" fill="#C8102E"/>
-      </svg>
-      <span class="brand-stack">SYS EV<span class="tag">Pvt. Ltd. · Nepal</span></span>
-    </a>
-    <nav class="main-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="scooters.html" class="active">Scooters</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="dealers.html">Showrooms</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="test-ride.html" class="btn btn-primary btn-sm">Book a Test Ride</a>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ================= PAGE HERO ================= -->
-  <section style="padding: 60px 0; background: #f9f6f0;">
-    <div class="container">
-      <span class="eyebrow" style="color: #C8102E; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Ride The Future. Own The Change.</span>
-      <h1 style="font-size: clamp(32px, 5vw, 48px); margin-top: 14px; max-width: 800px; font-weight: 800; line-height: 1.15; color: #1B2A4A;">
-        Share Your Story: The Ultimate Long-Range Revolution.
-      </h1>
-      <p style="font-size: 18px; color: #444; margin-top: 16px; max-width: 650px; line-height: 1.6;">
-        Tell us about your ride on the groundbreaking <strong>SYS EV M5</strong>—engineered with highest-in-market battery range, or rule city traffic elegantly with the ultra-smart <strong>SYS EV FX</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= MODEL SECTIONS ================= -->
-  <section style="padding: 40px 0; background: #ffffff;">
-    <div class="container">
-      <div class="grid-two-models">
-
-        <!-- SYS EV FX CARD -->
-        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background: #fff;">
+  <main id="main">
+    <section class="catalog-page-hero">
+      <div class="container">
+        <p class="crumb"><a href="index.html">Home</a> / Scooters</p>
+        <div class="catalog-hero-row">
           <div>
-            <div class="image-display-box">
-              <img id="fx-main-img" src="assets/fx sys premium orange.png" alt="SYS EV FX Premium Orange">
+            <span class="eyebrow">Complete model explorer</span>
+            <h1>M5 and FX.<br>Fully explained.</h1>
+          </div>
+          <p>Switch between M5 and FX, choose a colour, then use the tabs to inspect performance, smart equipment, the complete specification table, and every available price configuration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" data-scooter-catalog data-default-model="m5">
+      <div class="container">
+        <div class="catalog-model-switch" role="tablist" aria-label="Choose scooter model">
+          <button class="active" type="button" data-catalog-model="m5" role="tab" aria-selected="true">
+            <span>M5</span>
+            <small>Flagship range / NPR 385,000</small>
+          </button>
+          <button type="button" data-catalog-model="fx" role="tab" aria-selected="false">
+            <span>FX</span>
+            <small>Smart city / From NPR 210,000</small>
+          </button>
+        </div>
+
+        <div class="catalog-workbench">
+          <aside class="catalog-visual">
+            <div class="catalog-image-stage">
+              <span class="catalog-image-label">Actual available colour</span>
+              <img data-catalog-image src="assets/M5GREENSYSEV.jpg" alt="SYS EV M5 in Eco Green">
             </div>
-
-            <div style="padding: 26px;">
-              <div class="pill" style="display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 100px; margin-bottom: 12px; background: #eef2f7; color: #1B2A4A">SMART. POWERFUL. PREMIUM.</div>
-              <h2 style="font-size: 28px; margin: 0 0 8px 0; color: #1B2A4A;">SYS EV FX</h2>
-              <p style="color: #555; font-size: 14.5px; margin-bottom: 15px; line-height: 1.5;">
-                Designed for swift urban movement. Equipped with a 2500W Yuma Liquid-Cooled Motor and high safety protections.
-              </p>
-
-              <div class="color-dots-container">
-                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
-                <div class="color-dot active-dot" style="background: #F5A623;" title="Premium Orange" onclick="switchColor('fx', 'assets/fx sys orange.jpg', this)"></div>
-                <div class="color-dot" style="background: #E86F88;" title="Metallic Rose Pink" onclick="switchColor('fx', 'assets/fx sys rose pink.jpg', this)"></div>
-                <div class="color-dot" style="background: #7EC0EE;" title="Sky Blue" onclick="switchColor('fx', 'assets/fx sys sky blue.jpg', this)"></div>
+            <div class="catalog-color-area">
+              <div>
+                <small>Selected colour</small>
+                <strong data-catalog-color-name>Eco Green</strong>
               </div>
-
-              <ul class="features-inline-list">
-                <li>2500W Yuma Liquid Motor</li>
-                <li>Up to 150-200 km Range</li>
-                <li>NFC + Mobile Bluetooth App</li>
-                <li>Waterproof Premium Seats</li>
-                <li>Hill Hold Assist Feature</li>
-                <li>Smart Fault Diagnostics</li>
-              </ul>
+              <div class="catalog-colors" data-catalog-colors aria-label="Available colours"></div>
             </div>
-          </div>
+            <a class="catalog-brochure-link" data-catalog-brochure href="assets/m5-brochure.jpg" target="_blank" rel="noopener">
+              <i data-lucide="scan-search"></i>
+              <span><small>Original supplied sheet</small>Open full-resolution brochure</span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </aside>
 
-          <div style="padding: 0 26px 26px 26px;">
-            <div style="margin-top: 10px; border-top: 1px solid #e2d8c3; padding-top: 15px;">
-              <span style="font-size: 12px; color: #555; display:block;">Starting Price (NRS)</span>
-              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: #1B2A4A">Rs 2,10,000</span>
-            </div>
-            <a href="#specs-fx" class="btn btn-outline btn-block" style="margin-top: 16px; display: block; text-align: center; border: 1px solid #1B2A4A; padding: 10px; border-radius: 6px; text-decoration: none; color: #1B2A4A; font-weight: 600;">Detailed Specs & Options</a>
-          </div>
-        </div>
-
-        <!-- SYS EV M5 CARD -->
-        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid #F5A623 !important; position: relative; background: #fff;">
-          <div style="position: absolute; top: 16px; right: 16px; background: #F5A623; color: white; font-family: JetBrains Mono; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 100px; z-index: 2;">HIGHEST RANGE IN MARKET</div>
-          
-          <div>
-            <div class="image-display-box">
-              <img id="m5-main-img" src="assets/m5 premium orange.png" alt="SYS EV M5 Premium Orange">
-            </div>
-
-            <div style="padding: 26px;">
-              <div class="pill" style="display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: 600; border-radius: 100px; margin-bottom: 12px; background: rgba(245,166,35,.15); color: #F5A623">THE LONG-RANGE REVOLUTION</div>
-              <h2 style="font-size: 28px; margin: 0 0 8px 0; color: #1B2A4A;">SYS EV M5</h2>
-              <p style="color: #555; font-size: 14.5px; margin-bottom: 15px; line-height: 1.5;">
-                Conquer extreme trips with total peace of mind. Outfitted with massive battery capabilities and rugged structures built for Nepal's terrain.
-              </p>
-
-              <div class="color-dots-container">
-                <span style="font-size:13px; font-weight:600; align-self:center; margin-right:5px; color:#333;">Colours:</span>
-                <div class="color-dot active-dot" style="background: #F5A623;" title="Premium Orange" onclick="switchColor('m5', 'assets/M5 ORANGE SYS EV.jpg', this)"></div>
-                <div class="color-dot" style="background: #4A773C;" title="Forest Green" onclick="switchColor('m5', 'assets/M5GREENSYSEV.jpg', this)"></div>
-                <div class="color-dot" style="background: #D81B60;" title="Crimson Pink" onclick="switchColor('m5', 'assets/M5PINKREDSYSEV.jpg', this)"></div>
+          <div class="catalog-details">
+            <div class="catalog-title-row">
+              <div>
+                <span data-catalog-subtitle>Flagship long-range edition</span>
+                <h2 data-catalog-name>SYS EV M5</h2>
               </div>
-
-              <ul class="features-inline-list">
-                <li>2500W Yuma Liquid-Cooled</li>
-                <li>Massive 330 - 350 km Range</li>
-                <li>72V 120Ah LFP Long-Life Tech</li>
-                <li>Full Body Protective Safety Cage</li>
-                <li>Premium Leather Comfort Seats</li>
-                <li>Hill Hold + Parking (P) Mode</li>
-              </ul>
+              <a class="btn" href="test-ride.html"><i data-lucide="calendar-check"></i> Test ride</a>
             </div>
-          </div>
 
-          <div style="padding: 0 26px 26px 26px;">
-            <div style="margin-top: 10px; border-top: 1px solid #e2d8c3; padding-top: 15px;">
-              <span style="font-size: 12px; color: #555; display:block;">Fixed Price (NRS)</span>
-              <span style="font-family: Poppins; font-weight: 800; font-size: 26px; color: #D04A02;">Rs 3,85,000</span>
+            <div class="catalog-detail-tabs" role="tablist" aria-label="Model details">
+              <button class="active" type="button" data-catalog-tab="overview" role="tab" aria-selected="true">Overview</button>
+              <button type="button" data-catalog-tab="performance" role="tab" aria-selected="false">Performance</button>
+              <button type="button" data-catalog-tab="smart" role="tab" aria-selected="false">Smart &amp; Safety</button>
+              <button type="button" data-catalog-tab="specifications" role="tab" aria-selected="false">Specifications</button>
+              <button type="button" data-catalog-tab="pricing" role="tab" aria-selected="false">Pricing</button>
             </div>
-            <a href="#specs-m5" class="btn btn-primary btn-block" style="margin-top: 16px; display: block; text-align: center; background: #1B2A4A; padding: 10px; border-radius: 6px; text-decoration: none; color: #fff; font-weight: 600;">Detailed Specs & Options</a>
+
+            <div class="catalog-content" data-catalog-content aria-live="polite"></div>
           </div>
         </div>
 
+        <p class="fine-print catalog-disclaimer">Technical specifications in the model details follow supplier proforma invoice AT-ATK2026000623. Retail prices and availability remain subject to final confirmation.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= RANGE CALCULATOR ================= -->
-  <section style="background: #f9f6f0; padding: 60px 0;">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <span class="eyebrow" style="color: #F5A623; text-transform: uppercase; font-weight: 700;">Plan Your Adventures</span>
-          <h2 style="margin-top:10px; font-size:clamp(24px,3.2vw,32px); color: #1B2A4A;">How long can your story go?</h2>
-          <p style="color:#555; margin-top:14px; line-height: 1.6;">
-            Select a battery option and adjust your standard daily mileage. Our system calculates estimated intervals before needing your next plug-in charge.
-          </p>
-        </div>
-        <div class="calc-box">
-          <form id="rangeCalc">
-            <label for="model">Choose Variant Configuration</label>
-            <select id="model" name="model">
-              <option value="95">FX — 72V 35Ah Graphene/LFP (95 km average)</option>
-              <option value="175">FX — 72V 55Ah LFP Flagship (175 km average)</option>
-              <option value="340" selected>M5 — 72V 120Ah Ultra Premium (340 km average)</option>
-            </select>
-            <label for="daily">Estimated Daily Commute Distance: <strong><span id="dailyVal">40</span> km</strong></label>
-            <input type="range" id="daily" name="daily" min="10" max="150" value="40" step="5">
-          </form>
-          <div class="calc-result" id="rangeCalcResult">
-            Loading configuration data...
-          </div>
+    <section class="section-sm section-dark">
+      <div class="container cta-band">
+        <h2>Still comparing M5 and FX? Ride both.</h2>
+        <div class="actions">
+          <a class="btn" href="test-ride.html"><i data-lucide="calendar-check"></i> Book a test ride</a>
+          <a class="btn btn-light" href="https://wa.me/9779714571009?text=Hello%20SYS%20EV%2C%20I%20need%20help%20choosing%20between%20M5%20and%20FX." target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Ask on WhatsApp</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ================= FULL SPECIFICATION DATA TABLES ================= -->
-  <section style="padding: 60px 0; background: #fff;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 45px;">
-        <span class="eyebrow" style="color: #555; font-weight: 600;">Technical Matrix</span>
-        <h2 style="color: #1B2A4A;">Deep Specification Compare</h2>
-      </div>
-
-      <!-- FX VARIANT BLOCK -->
-      <div id="specs-fx" style="margin-bottom: 60px;">
-        <h3 style="font-size:22px; margin-bottom:12px; color: #1B2A4A; display: flex; justify-content: space-between; align-items: baseline;">
-          <span>SYS EV FX Detailed Specs</span>
-          <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
-        </h3>
-        
-        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
-          <table class="spec-table" style="margin-bottom: 0;">
-            <tr><td>Technical Attribute</td><td>Factory Specification Detail Data</td></tr>
-            <tr><td>Motor Profile</td><td>All-new Yuma Liquid-Cooled Pure Copper 2500W 12-inch Motor</td></tr>
-            <tr><td>Braking Elements</td><td>Front & Rear Disc Brakes (180mm Front / 180mm Rear System)</td></tr>
-            <tr><td>Suspension Architecture</td><td>Front Hydraulic Suspension / Rear Spring Suspension Absorbers</td></tr>
-            <tr><td>Tyre Framework</td><td>Front 110/70-12 / Rear 130/70-12 (Widened Tubeless Safety Tyres)</td></tr>
-            <tr><td>Rim Type</td><td>Front & Rear 10-inch "Starry Sky" Style Aluminum Alloy Rims</td></tr>
-            <tr><td>Dimensions (L × W × H)</td><td>1880 mm × 730 mm × 1100 mm</td></tr>
-            <tr><td>Smart Interface System</td><td>HD LED Display with NFC, Mobile App integration, Fault Diagnostics, Bluetooth Audio</td></tr>
-          </table>
-        </div>
-
-        <h4 style="margin: 20px 0 10px 0; font-size:16px; color: #333;">FX Battery Configuration & Pricing Matrix</h4>
-        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
-          <table class="spec-table" style="margin-bottom: 0;">
-            <tr style="background: #fdfdfd; font-weight: bold; color: #444;">
-              <td>Battery Pack</td><td>Cell Type</td><td>Tested Range</td><td>Price (NRS)</td><td>Warranty Tier</td>
-            </tr>
-            <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,10,000</strong></td><td>1 Year Factory Coverage</td></tr>
-            <tr><td>72V 35Ah</td><td>GRAPHENE</td><td>90 - 100 km</td><td><strong>NRs 2,35,000</strong></td><td>2 Years Factory Coverage</td></tr>
-            <tr><td>72V 35Ah</td><td>LFP</td><td>90 - 100 km</td><td><strong>NRs 2,50,000</strong></td><td>3 Years Core Protection</td></tr>
-            <tr><td>72V 55Ah</td><td>LFP</td><td>150 - 200 km</td><td><strong>NRs 3,00,000</strong></td><td>3 Years Core Protection</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- M5 VARIANT BLOCK -->
-      <div id="specs-m5" style="margin-bottom: 40px;">
-        <h3 style="font-size:22px; margin-bottom:12px; color: #D04A02; display: flex; justify-content: space-between; align-items: baseline;">
-          <span>SYS EV M5 Detailed Specs</span>
-          <span style="font-size:14px; font-weight: normal; color: #666;">Top Speed: 75 km/h</span>
-        </h3>
-        
-        <div style="overflow:auto; border: 1px solid #e2d8c3; border-radius: 8px;">
-          <table class="spec-table" style="margin-bottom: 0;">
-            <tr><td>Technical Attribute</td><td>Factory Specification Detail Data</td></tr>
-            <tr><td>Powertrain System</td><td>All-new Yuma liquid-cooled pure copper 2500W 12-inch motor</td></tr>
-            <tr><td>Battery Pack Assembly</td><td>72V 120Ah Massive LFP (Max Capacity, Maximum Performance Yield)</td></tr>
-            <tr><td>Tested Range Range</td><td>330 - 350 km (Highest Certified in Market segments)</td></tr>
-            <tr><td>Premium Standard Options</td><td>Black waterproof leather seat, full-vehicle protective cage architecture, rearview mirrors, easy-lift center stand, USB port, floor mat, hill-hold control.</td></tr>
-            <tr><td>Braking & Wheels</td><td>Front/Rear disc brake set, Front 110/70-12 / Rear 130/70-12 Widened Tubeless tyres, 10" Starry Sky alloy rims.</td></tr>
-            <tr><td>Commercial Price Tag</td><td><strong>NRs 3,85,000 Complete</strong></td></tr>
-            <tr><td>Warranty Matrix</td><td>3 Years Comprehensive LFP Battery Pack Protection</td></tr>
-          </table>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer" style="background:#1B2A4A; color:#faf6ef; padding: 40px 0;">
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-      <div>
-        <h4 style="color:#fff; margin-bottom: 10px;">SYS EV Pvt. Ltd.</h4>
-        <p style="font-size:14px; max-width:280px; color:rgba(250,246,239,.6); margin: 0;">
-          Premium Electric Scooters built explicitly for rugged Nepali streets. Engineered for endurance.
-        </p>
-      </div>
-      <div>
-        <h4 style="color:#fff; margin-bottom: 10px;">Authorized Contact</h4>
-        <ul style="color: rgba(250,246,239,.8); font-size: 13.5px; list-style:none; padding:0; margin: 0; line-height: 1.8;">
-          <li>📞 +977 9766801639</li>
-          <li>✉️ sys-ev@outlook.com</li>
-          <li>🌐 www.sysev.com.np</li>
-          <li>📍 Kathmandu, Nepal</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Dynamic Image Color Switching Functionality
-  function switchColor(modelId, imagePath, dotElement) {
-    const mainImg = document.getElementById(modelId + '-main-img');
-    if (mainImg) {
-      mainImg.style.opacity = '0.3';
-      setTimeout(() => {
-        mainImg.src = imagePath;
-        mainImg.style.opacity = '1';
-      }, 150);
-    }
-    
-    // Manage active dot outline state inside context container
-    const parentContainer = dotElement.parentElement;
-    const dots = parentContainer.querySelectorAll('.color-dot');
-    dots.forEach(d => d.classList.remove('active-dot'));
-    dotElement.classList.add('active-dot');
-  }
-
-  // Range Slider Calculator Mechanics
-  const dailySlider = document.getElementById('daily');
-  const dailyVal = document.getElementById('dailyVal');
-  const modelSelect = document.getElementById('model');
-  const calcResult = document.getElementById('rangeCalcResult');
-
-  function updateCalculation() {
-    if (!dailySlider || !modelSelect || !calcResult) return;
-    const dailyDistance = parseInt(dailySlider.value, 10);
-    const capacityRange = parseInt(modelSelect.value, 10);
-    dailyVal.textContent = dailyDistance;
-
-    const daysWithoutCharge = (capacityRange / dailyDistance).toFixed(1);
-    
-    if (daysWithoutCharge >= 7) {
-      calcResult.innerHTML = `With a <strong>${dailyDistance} km</strong> daily run, your selected setup will last <strong>over a full week (${daysWithoutCharge} days)</strong> on a single charge circle!`;
-    } else {
-      calcResult.innerHTML = `With a <strong>${dailyDistance} km</strong> daily run, you will need to recharge roughly every <strong>${daysWithoutCharge} days</strong> of operation.`;
-    }
-  }
-
-  if (dailySlider && modelSelect) {
-    dailySlider.addEventListener('input', updateCalculation);
-    modelSelect.addEventListener('change', updateCalculation);
-    updateCalculation();
-  }
-</script>
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 </html>
