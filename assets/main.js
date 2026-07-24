@@ -125,103 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   selectQueryTopic();
   initScooterCatalog();
-  initRideMatcher();
   initMotionShowcase();
 });
-
-function initRideMatcher() {
-  const matcher = document.querySelector("[data-ride-matcher]");
-  if (!matcher) return;
-
-  const rangeInput = matcher.querySelector("[data-match-range]");
-  const priorityButtons = [...matcher.querySelectorAll("[data-match-priority]")];
-  const output = {
-    distance: matcher.querySelector("[data-match-distance]"),
-    model: matcher.querySelector("[data-match-model]"),
-    variant: matcher.querySelector("[data-match-variant]"),
-    price: matcher.querySelector("[data-match-price]"),
-    reason: matcher.querySelector("[data-match-reason]"),
-    claimedRange: matcher.querySelector("[data-match-claimed-range]"),
-    days: matcher.querySelector("[data-match-days]")
-  };
-  let priority = "value";
-
-  const recommendationFor = dailyDistance => {
-    if (dailyDistance <= 45 && priority === "warranty") {
-      return {
-        model: "SYS EV FX",
-        variant: "72V-30Ah LFP / 3-year warranty",
-        price: "NPR 250,000",
-        claimedRange: "90-100 km",
-        minimumRange: 90,
-        reason: "A longer-warranty LFP choice for shorter daily routes."
-      };
-    }
-    if (dailyDistance <= 45) {
-      return {
-        model: "SYS EV FX",
-        variant: "72V-38Ah Graphene / 1-year warranty",
-        price: "NPR 210,000",
-        claimedRange: "90-100 km",
-        minimumRange: 90,
-        reason: "A value-focused fit for shorter daily routes."
-      };
-    }
-    if (dailyDistance <= 85) {
-      return {
-        model: "SYS EV FX",
-        variant: "72V-50Ah LFP / 3-year warranty",
-        price: "NPR 300,000",
-        claimedRange: "150-200 km",
-        minimumRange: 150,
-        reason: "More range for longer city and outskirts travel."
-      };
-    }
-    return {
-      model: "SYS EV M5",
-      variant: "72V-105Ah LFP / 3-year warranty",
-      price: "NPR 385,000",
-      claimedRange: "330-350 km",
-      minimumRange: 330,
-      reason: "The flagship choice for high daily mileage and fewer charging stops."
-    };
-  };
-
-  const render = () => {
-    const dailyDistance = Number(rangeInput.value);
-    const recommendation = recommendationFor(dailyDistance);
-    const estimatedDays = Math.max(1, Math.floor(recommendation.minimumRange / dailyDistance));
-    const progress = ((dailyDistance - Number(rangeInput.min)) /
-      (Number(rangeInput.max) - Number(rangeInput.min))) * 100;
-
-    output.distance.textContent = dailyDistance;
-    output.model.textContent = recommendation.model;
-    output.variant.textContent = recommendation.variant;
-    output.price.textContent = recommendation.price;
-    output.reason.textContent = recommendation.reason;
-    output.claimedRange.textContent = recommendation.claimedRange;
-    output.days.textContent = estimatedDays === 1 ? "About 1 day" : `About ${estimatedDays} days`;
-    matcher.querySelector("[data-match-link]").href =
-      `scooters.html?model=${recommendation.model.endsWith("M5") ? "m5" : "fx"}&tab=overview`;
-    rangeInput.style.setProperty("--progress", `${progress}%`);
-  };
-
-  rangeInput.addEventListener("input", render);
-  priorityButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      priority = button.dataset.matchPriority;
-      priorityButtons.forEach(item => {
-        const isActive = item === button;
-        item.classList.toggle("active", isActive);
-        item.setAttribute("aria-pressed", String(isActive));
-      });
-      render();
-    });
-    button.setAttribute("aria-pressed", String(button.classList.contains("active")));
-  });
-
-  render();
-}
 
 function initMotionShowcase() {
   const showcase = document.querySelector("[data-motion-showcase]");
@@ -414,7 +319,7 @@ const catalogModels = {
       ["gauge", "2500W liquid-cooled motor", "All-new Yuma liquid-cooled pure copper 12-inch motor engineered for strong, consistent output."],
       ["zap", "Instant torque", "Immediate electric acceleration for confident starts and responsive city riding."],
       ["mountain", "Strong hill climbing", "Power delivery designed for slopes and changing road gradients."],
-      ["disc-3", "Front and rear disc brakes", "220 mm front and 220 mm rear disc brakes in the supplier invoice."],
+      ["disc-3", "Front and rear disc brakes", "220 mm front and 220 mm rear disc brakes."],
       ["unfold-vertical", "Balanced suspension", "Front hydraulic suspension and rear spring suspension for stability and shock absorption."],
       ["route", "Long-range LFP power", "330-350 km brochure-listed claimed range under ideal conditions."]
     ],
@@ -436,7 +341,7 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Invoice battery configuration", "72V-105Ah LFP pack with charger, using brand-new Grade A+ cells"],
+      ["Battery configuration", "72V-105Ah LFP pack with charger, using brand-new Grade A+ cells"],
       ["Claimed range", "330-350 km per charge, as listed in the supplied brochure*"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
@@ -446,7 +351,7 @@ const catalogModels = {
       ["Starting method", "Key / NFC / mobile phone"],
       ["Dashboard", "HD LED display with speed, battery, lights, signals, hazards, mileage, and smart diagnostics"],
       ["Standard equipment", "Waterproof leather seat, LED lighting, mirrors, centre and side stands, USB port, floor mat, hill-hold parking"],
-      ["Documentation note", "Battery, brake, tyre, and rim specifications follow supplier proforma invoice AT-ATK2026000623. Range, warranty, and additional smart features are brochure-listed."]
+      ["Documentation note", "Battery, brake, tyre, and rim details follow the supplied technical specifications. Range, warranty, and additional smart features are brochure-listed."]
     ],
     pricing: [
       ["SYS EV M5", "8.64 kWh LFP", "330-350 km", "3 years", "NPR 385,000"]
@@ -455,8 +360,8 @@ const catalogModels = {
   fx: {
     name: "SYS EV FX",
     shortName: "FX",
-    subtitle: "Three invoice-listed configurations",
-    description: "All three supplier-invoiced battery configurations are shown together below.",
+    subtitle: "Three battery configurations",
+    description: "All three available battery configurations are shown together below.",
     image: "assets/fx sys orange.jpg",
     brochure: "assets/fx-brochure.jpg",
     colors: [
@@ -465,14 +370,14 @@ const catalogModels = {
       ["Sky Blue", "assets/fx sys sky blue.jpg", "#8fc9e8"]
     ],
     stats: [
-      ["3", "Invoice variants"],
+      ["3", "Battery options"],
       ["2500W", "Yuma motor"],
       ["75 km/h", "Top speed"],
       ["220 mm", "Front and rear discs"]
     ],
     performance: [
       ["gauge", "2500W liquid-cooled motor", "Yuma liquid-cooled pure copper 12-inch motor."],
-      ["gauge", "75 km/h top speed", "Top speed stated in the supplier proforma invoice."],
+      ["gauge", "75 km/h top speed", "Top speed stated in the supplied technical specification."],
       ["disc-3", "Front and rear disc brakes", "220 mm front and 220 mm rear disc brakes."],
       ["unfold-vertical", "Hydraulic and spring suspension", "Hydraulic front suspension with rear spring suspension."]
     ],
@@ -482,7 +387,7 @@ const catalogModels = {
       ["battery-charging", "72V-50Ah LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."]
     ],
     smart: [
-      ["monitor", "HD LED display", "Included in every invoiced FX configuration."],
+      ["monitor", "HD LED display", "Included in every FX configuration."],
       ["nfc", "NFC", "NFC functionality included."],
       ["smartphone", "App connectivity", "App functionality included."],
       ["bluetooth", "Bluetooth", "Bluetooth connectivity included."],
@@ -495,14 +400,13 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Invoice battery configurations", "72V-38Ah Graphene / 72V-30Ah LFP / 72V-50Ah LFP; every configuration includes its charger"],
+      ["Battery configurations", "72V-38Ah Graphene / 72V-30Ah LFP / 72V-50Ah LFP; every configuration includes its charger"],
       ["Battery cells", "Brand-new Grade A+ cells for both LFP configurations"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
       ["Tyres", "Front 110/70-12 / rear 110/70-12 widened tubeless"],
       ["Rims", "Front and rear 12-inch 'Starry Sky' aluminium alloy"],
-      ["Included features", "HD LED display, NFC, app, Bluetooth, keyless start, waterproof leather seat, centre and side stands, USB"],
-      ["Source", "Supplier proforma invoice AT-ATK2026000623 dated 2026.06.23"]
+      ["Included features", "HD LED display, NFC, app, Bluetooth, keyless start, waterproof leather seat, centre and side stands, USB"]
     ],
     pricing: [
       ["SYS EV FX", "3.96 kWh LFP", "150-200 km", "3 years", "NPR 300,000"],

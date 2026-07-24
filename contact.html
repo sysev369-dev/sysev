@@ -45,50 +45,46 @@
         </form>
       </div>
     </section>
-    <section class="ride-matcher" data-ride-matcher>
+    <section class="section section-white" id="pricing">
       <div class="container">
-        <div class="ride-matcher-head">
+        <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Find your SYS EV</span>
-            <h2>One question.<br>A clearer choice.</h2>
+            <span class="eyebrow">Scooter prices</span>
+            <h2 class="section-title">Choose the scooter first.</h2>
+            <p class="section-copy">Two models, clearly priced. Select the M5 for flagship range or configure the FX around your budget and daily ride.</p>
           </div>
-          <p>Set your approximate daily travel and choose what matters more. We will point you towards a sensible starting configuration.</p>
         </div>
-
-        <div class="ride-matcher-tool">
-          <div class="ride-input-panel">
-            <div class="ride-distance-label">
-              <label for="dailyRide">Your daily travel</label>
-              <output for="dailyRide"><strong data-match-distance>35</strong><span>km / day</span></output>
-            </div>
-            <input id="dailyRide" data-match-range type="range" min="10" max="160" step="5" value="35" aria-label="Daily travel distance in kilometres">
-            <div class="ride-range-scale"><span>10 km</span><span>City + outskirts</span><span>160 km</span></div>
-
-            <fieldset class="ride-priority">
-              <legend>For shorter rides, prioritise</legend>
-              <button class="active" type="button" data-match-priority="value"><i data-lucide="badge-dollar-sign"></i> Lowest price</button>
-              <button type="button" data-match-priority="warranty"><i data-lucide="shield-check"></i> Longer warranty</button>
-            </fieldset>
-          </div>
-
-          <div class="ride-result" aria-live="polite">
-            <span class="ride-result-kicker">Recommended starting point</span>
-            <div class="ride-result-title">
-              <div>
-                <h3 data-match-model>SYS EV FX</h3>
-                <p data-match-variant>72V-38Ah Graphene / 1-year warranty</p>
+        <div class="scooter-price-grid reveal">
+          <article class="scooter-price-card">
+            <img src="assets/M5GREENSYSEV.jpg" alt="SYS EV M5 in eco green">
+            <div class="scooter-price-copy">
+              <span class="scooter-price-model">Flagship long-range scooter</span>
+              <h3>SYS EV M5</h3>
+              <p class="scooter-price-amount"><small>Scooter MRP</small>NPR 385,000</p>
+              <div class="scooter-price-details">
+                <span><i data-lucide="route"></i>330-350 km claimed range*</span>
+                <span><i data-lucide="shield-check"></i>3-year battery warranty</span>
+                <span><i data-lucide="palette"></i>Three available colours</span>
               </div>
-              <span data-match-price>NPR 210,000</span>
+              <a class="btn" href="scooters.html?model=m5&amp;tab=overview">Explore M5 <i data-lucide="arrow-right"></i></a>
             </div>
-            <p class="ride-result-reason" data-match-reason>A value-focused fit for shorter daily routes.</p>
-            <div class="ride-result-stats">
-              <div><small>Claimed range*</small><strong data-match-claimed-range>90-100 km</strong></div>
-              <div><small>Ideal-charge rhythm*</small><strong data-match-days>About 2 days</strong></div>
+          </article>
+          <article class="scooter-price-card">
+            <img src="assets/fx sys rose pink.jpg" alt="SYS EV FX in metallic rose pink">
+            <div class="scooter-price-copy">
+              <span class="scooter-price-model">Smart city scooter</span>
+              <h3>SYS EV FX</h3>
+              <p class="scooter-price-amount"><small>Scooter MRP</small>From NPR 210,000</p>
+              <div class="scooter-price-details">
+                <span><i data-lucide="route"></i>90-200 km claimed range*</span>
+                <span><i data-lucide="settings-2"></i>Five price and warranty configurations</span>
+                <span><i data-lucide="palette"></i>Three available colours</span>
+              </div>
+              <a class="btn" href="scooters.html?model=fx&amp;tab=pricing">Compare FX variants <i data-lucide="arrow-right"></i></a>
             </div>
-            <a class="btn btn-dark" data-match-link href="scooters.html">Explore this configuration <i data-lucide="arrow-right"></i></a>
-          </div>
+          </article>
         </div>
-        <p class="ride-matcher-note">*This tool is an indicative starting point, not a real-world range guarantee. Actual range and charging frequency vary with riding conditions, load, terrain, weather, speed, and battery condition.</p>
+        <p class="fine-print">*Claimed range is under ideal conditions. Prices and availability are subject to confirmation. Contact SYS EV for current stock and final on-road pricing.</p>
       </div>
     </section>
   </main>
