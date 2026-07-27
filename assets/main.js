@@ -36,6 +36,9 @@ if (header) {
 
 const footer = document.getElementById("site-footer");
 if (footer) {
+  const footerLocation = page === "contact"
+    ? "<span>Balkhu, Kathmandu</span>"
+    : '<a href="https://maps.app.goo.gl/q1CazRJc4amtG4V78?g_st=aw" target="_blank" rel="noopener">Kanchhan Basti, Chandragiri-10</a>';
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="container">
@@ -59,7 +62,7 @@ if (footer) {
           <ul>
             <li><a href="https://wa.me/9779714571009" target="_blank" rel="noopener">WhatsApp: +977-9714571009</a></li>
             <li><a href="mailto:sys-ev@outlook.com">sys-ev@outlook.com</a></li>
-            <li><a href="https://maps.app.goo.gl/q1CazRJc4amtG4V78?g_st=aw" target="_blank" rel="noopener">Kanchhan Basti, Chandragiri-10</a></li>
+            <li>${footerLocation}</li>
           </ul>
         </div>
       </div>
@@ -164,9 +167,9 @@ const products = {
     subtitle: "Flagship long-range edition",
     description: "For riders who want maximum range without giving up performance, storage, or smart everyday convenience.",
     range: "330-350 km",
-    battery: "72V-105Ah LFP",
+    battery: "72V-105 kWh LFP",
     price: "NPR 385,000",
-    warranty: "3 years",
+    batteryWarranty: "3 years",
     colors: [
       ["Eco Green", "assets/M5GREENSYSEV.jpg", "#7ed321"],
       ["Solar Orange", "assets/M5 ORANGE SYS EV.jpg", "#ef5b12"],
@@ -176,11 +179,11 @@ const products = {
   fx: {
     name: "SYS EV FX",
     subtitle: "Smart city performance",
-    description: "A premium urban scooter in 72V-38Ah Graphene, 72V-30Ah LFP, and 72V-50Ah LFP configurations.",
+    description: "A premium urban scooter in 72V-38 kWh Graphene, 72V-30 kWh LFP, and 72V-50 kWh LFP configurations.",
     range: "90-200 km",
-    battery: "30Ah / 38Ah / 50Ah",
+    battery: "30 kWh / 38 kWh / 50 kWh",
     price: "From NPR 210,000",
-    warranty: "1-3 years",
+    batteryWarranty: "1-3 years",
     colors: [
       ["Premium Orange", "assets/fx sys orange.jpg", "#ef5b12"],
       ["Metallic Rose Pink", "assets/fx sys rose pink.jpg", "#d86e92"],
@@ -205,7 +208,7 @@ function initModelStage() {
     stage.querySelector("[data-range]").textContent = product.range;
     stage.querySelector("[data-battery]").textContent = product.battery;
     stage.querySelector("[data-price]").textContent = product.price;
-    stage.querySelector("[data-warranty]").textContent = product.warranty;
+    stage.querySelector("[data-battery-warranty]").textContent = product.batteryWarranty;
     stage.querySelector("[data-model-link]").href = `scooters.html?model=${selected}&tab=specifications`;
     stage.querySelector("[data-color-name]").textContent = product.colors[0][0];
     stage.querySelector("[data-colors]").innerHTML = product.colors.map(([name, src, color], index) =>
@@ -311,7 +314,7 @@ const catalogModels = {
     ],
     stats: [
       ["330-350 km", "Claimed range*"],
-      ["72V-105Ah", "LFP battery"],
+      ["72V-105 kWh", "LFP battery"],
       ["75 km/h", "Top speed"],
       ["3 years", "Battery warranty"]
     ],
@@ -341,7 +344,7 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Battery configuration", "72V-105Ah LFP pack with charger, using brand-new Grade A+ cells"],
+      ["Battery configuration", "72V-105 kWh LFP pack with charger, using brand-new Grade A+ cells"],
       ["Claimed range", "330-350 km per charge, as listed in the supplied brochure*"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
@@ -351,7 +354,7 @@ const catalogModels = {
       ["Starting method", "Key / NFC / mobile phone"],
       ["Dashboard", "HD LED display with speed, battery, lights, signals, hazards, mileage, and smart diagnostics"],
       ["Standard equipment", "Waterproof leather seat, LED lighting, mirrors, centre and side stands, USB port, floor mat, hill-hold parking"],
-      ["Documentation note", "Battery, brake, tyre, and rim details follow the supplied technical specifications. Range, warranty, and additional smart features are brochure-listed."]
+      ["Documentation note", "Battery, brake, tyre, and rim details follow the supplied technical specifications. Range, battery warranty, and additional smart features are brochure-listed."]
     ],
     pricing: [
       ["SYS EV M5", "8.64 kWh LFP", "330-350 km", "3 years", "NPR 385,000"]
@@ -382,9 +385,9 @@ const catalogModels = {
       ["unfold-vertical", "Hydraulic and spring suspension", "Hydraulic front suspension with rear spring suspension."]
     ],
     configurations: [
-      ["battery-charging", "72V-38Ah Graphene", "Complete Graphene battery pack with charger."],
-      ["battery-charging", "72V-30Ah LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."],
-      ["battery-charging", "72V-50Ah LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."]
+      ["battery-charging", "72V-38 kWh Graphene", "Complete Graphene battery pack with charger."],
+      ["battery-charging", "72V-30 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."],
+      ["battery-charging", "72V-50 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."]
     ],
     smart: [
       ["monitor", "HD LED display", "Included in every FX configuration."],
@@ -400,7 +403,7 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Battery configurations", "72V-38Ah Graphene / 72V-30Ah LFP / 72V-50Ah LFP; every configuration includes its charger"],
+      ["Battery configurations", "72V-38 kWh Graphene / 72V-30 kWh LFP / 72V-50 kWh LFP; every configuration includes its charger"],
       ["Battery cells", "Brand-new Grade A+ cells for both LFP configurations"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
@@ -495,9 +498,9 @@ function initScooterCatalog() {
         </div>`;
     } else if (tabKey === "pricing") {
       host.innerHTML = `
-        <div class="catalog-pane-head"><span>Price, range, and warranty</span><h3>Choose your ${model.shortName} configuration.</h3></div>
+        <div class="catalog-pane-head"><span>Price, range, and battery warranty</span><h3>Choose your ${model.shortName} configuration.</h3></div>
         <div class="catalog-price-table">
-          <div class="catalog-price-row catalog-price-head"><span>Model</span><span>Battery</span><span>Range*</span><span>Warranty</span><span>MRP</span></div>
+          <div class="catalog-price-row catalog-price-head"><span>Model</span><span>Battery</span><span>Range*</span><span>Battery Warranty</span><span>MRP</span></div>
           ${model.pricing.map(row => `<div class="catalog-price-row">${row.map(value => `<span>${value}</span>`).join("")}</div>`).join("")}
         </div>
         <div class="catalog-price-actions">
