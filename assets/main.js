@@ -36,9 +36,7 @@ if (header) {
 
 const footer = document.getElementById("site-footer");
 if (footer) {
-  const footerLocation = page === "contact"
-    ? "<span>Balkhu, Kathmandu</span>"
-    : '<a href="https://maps.app.goo.gl/q1CazRJc4amtG4V78?g_st=aw" target="_blank" rel="noopener">Kanchhan Basti, Chandragiri-10</a>';
+  const footerLocation = "<span>Balkhu, Kathmandu</span>";
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="container">
@@ -61,7 +59,7 @@ if (footer) {
           <h3>Contact</h3>
           <ul>
             <li><a href="https://wa.me/9779714571009" target="_blank" rel="noopener">WhatsApp: +977-9714571009</a></li>
-            <li><a href="mailto:sys-ev@outlook.com">sys-ev@outlook.com</a></li>
+            <li><a href="mailto:info@sysev.com.np">info@sysev.com.np</a></li>
             <li>${footerLocation}</li>
           </ul>
         </div>
@@ -167,7 +165,7 @@ const products = {
     subtitle: "Flagship long-range edition",
     description: "For riders who want maximum range without giving up performance, storage, or smart everyday convenience.",
     range: "330-350 km",
-    battery: "72V-105 kWh LFP",
+    battery: "8.64 kWh LFP",
     price: "NPR 385,000",
     batteryWarranty: "3 years",
     colors: [
@@ -179,9 +177,9 @@ const products = {
   fx: {
     name: "SYS EV FX",
     subtitle: "Smart city performance",
-    description: "A premium urban scooter in 72V-38 kWh Graphene, 72V-30 kWh LFP, and 72V-50 kWh LFP configurations.",
+    description: "A premium urban scooter with 2.52 kWh Graphene, 2.52 kWh LFP, and 3.96 kWh LFP battery configurations.",
     range: "90-200 km",
-    battery: "30 kWh / 38 kWh / 50 kWh",
+    battery: "2.52 / 3.96 kWh",
     price: "From NPR 210,000",
     batteryWarranty: "1-3 years",
     colors: [
@@ -314,7 +312,7 @@ const catalogModels = {
     ],
     stats: [
       ["330-350 km", "Claimed range*"],
-      ["72V-105 kWh", "LFP battery"],
+      ["8.64 kWh", "LFP battery"],
       ["75 km/h", "Top speed"],
       ["3 years", "Battery warranty"]
     ],
@@ -344,7 +342,7 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Battery configuration", "72V-105 kWh LFP pack with charger, using brand-new Grade A+ cells"],
+      ["Battery configuration", "8.64 kWh LFP pack with charger, using brand-new Grade A+ cells"],
       ["Claimed range", "330-350 km per charge, as listed in the supplied brochure*"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
@@ -385,9 +383,9 @@ const catalogModels = {
       ["unfold-vertical", "Hydraulic and spring suspension", "Hydraulic front suspension with rear spring suspension."]
     ],
     configurations: [
-      ["battery-charging", "72V-38 kWh Graphene", "Complete Graphene battery pack with charger."],
-      ["battery-charging", "72V-30 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."],
-      ["battery-charging", "72V-50 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."]
+      ["battery-charging", "2.52 kWh Graphene", "Complete Graphene battery pack with charger."],
+      ["battery-charging", "2.52 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."],
+      ["battery-charging", "3.96 kWh LFP", "Brand-new Grade A+ cells, complete LFP battery pack, and charger."]
     ],
     smart: [
       ["monitor", "HD LED display", "Included in every FX configuration."],
@@ -403,7 +401,7 @@ const catalogModels = {
       ["Dimensions (L x W x H)", "1880 x 730 x 1100 mm"],
       ["Motor", "2500W Yuma liquid-cooled pure copper, 12-inch"],
       ["Top speed", "75 km/h"],
-      ["Battery configurations", "72V-38 kWh Graphene / 72V-30 kWh LFP / 72V-50 kWh LFP; every configuration includes its charger"],
+      ["Battery configurations", "2.52 kWh Graphene / 2.52 kWh LFP / 3.96 kWh LFP; every configuration includes its charger"],
       ["Battery cells", "Brand-new Grade A+ cells for both LFP configurations"],
       ["Brakes", "Front and rear disc brakes (220 mm / 220 mm)"],
       ["Suspension", "Front hydraulic / rear spring"],
