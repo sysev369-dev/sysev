@@ -849,17 +849,8 @@ h1, h2, h3, h4 {
 .map-panel .btn { align-self: flex-start; margin-top: 22px; }
 
 .booking-hero { background: #edf0e9; }
-.booking-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-.booking-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: start; }
-.booking-steps { display: grid; gap: 0; margin-top: 38px; border-top: 1px solid var(--line); }
-.booking-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.booking-steps li > span { display: grid; place-items: center; width: 36px; height: 36px; background: var(--green-dark); color: var(--white); font-family: "Sora", sans-serif; font-weight: 700; }
-.booking-steps strong { display: block; font-family: "Sora", sans-serif; }
-.booking-steps p { margin-top: 6px; color: var(--muted); font-size: 14px; }
-.booking-notice { display: grid; grid-template-columns: 30px 1fr; gap: 14px; margin-top: 28px; padding: 20px; border-left: 3px solid var(--gold); background: #eeefe8; }
-.booking-notice svg { width: 24px; color: var(--green-dark); }
-.booking-notice strong { display: block; margin-bottom: 4px; }
-.booking-notice p { color: var(--muted); font-size: 13px; }
+.booking-contact { margin-top: 28px; }
+.booking-simple-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: start; max-width: 1060px; }
 .payment-qr-panel { margin: 0; padding: 28px; border: 1px solid var(--line); background: var(--white); box-shadow: var(--shadow); }
 .payment-qr-head { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 20px; }
 .payment-qr-head span { display: flex; align-items: center; gap: 8px; color: var(--green-dark); font-size: 11px; font-weight: 800; text-transform: uppercase; }
@@ -871,10 +862,7 @@ h1, h2, h3, h4 {
 .payment-qr-panel figcaption strong { font-family: "Sora", sans-serif; }
 .payment-qr-panel figcaption span { color: var(--muted); font-size: 13px; }
 .payment-qr-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
-.booking-form-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 72px; align-items: start; }
-.booking-confirm { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; cursor: pointer; }
-.booking-confirm input { width: 18px; min-height: 18px; margin: 2px 0 0; accent-color: var(--green); }
-.booking-confirm span { color: var(--muted); font-size: 12px; font-weight: 600; }
+.booking-form h2 { margin: 12px 0 26px; font-size: 34px; }
 
 .faq { border-top: 1px solid var(--line); }
 .faq-item { border-bottom: 1px solid var(--line); }
@@ -1063,7 +1051,7 @@ h1, h2, h3, h4 {
   .catalog-price-actions { flex-direction: column; }
   .cta-band { display: block; }
   .cta-band .actions { margin-top: 24px; }
-  .product-grid, .contact-grid, .booking-layout, .booking-form-layout { grid-template-columns: 1fr; }
+  .product-grid, .contact-grid, .booking-simple-grid { grid-template-columns: 1fr; }
   .contact-grid { gap: 44px; }
   .form-grid { grid-template-columns: 1fr; }
   .field.full { grid-column: auto; }
