@@ -24,13 +24,13 @@ if (header) {
       </nav>
       <div class="nav-actions">
         <a class="icon-button whatsapp-button" href="https://wa.me/9779714571009?text=Hello%20SYS%20EV%2C%20I%20would%20like%20to%20know%20more%20about%20your%20scooters." target="_blank" rel="noopener" aria-label="Chat with SYS EV on WhatsApp" title="Chat on WhatsApp">${icon("message-circle")}</a>
-        <a class="btn" href="test-ride.html">${icon("calendar-check")} Book a test ride</a>
+        <a class="btn" href="booking.html">${icon("scan-line")} Advance booking</a>
         <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">${icon("menu")}</button>
       </div>
     </div>
     <nav class="mobile-nav" aria-label="Mobile navigation">
       ${navItems.map(([id, label, href]) => `<a href="${href}">${label}</a>`).join("")}
-      <a class="btn" href="test-ride.html">Book a test ride</a>
+      <a class="btn" href="booking.html">Advance booking</a>
     </nav>`;
 }
 
@@ -52,6 +52,7 @@ if (footer) {
             <li><a href="scooters.html#pricing">Pricing</a></li>
             <li><a href="scooters.html#specifications">Specifications</a></li>
             <li><a href="test-ride.html">Book a test ride</a></li>
+            <li><a href="booking.html">Advance booking</a></li>
             <li><a href="contact.html?topic=dealer#enquiry">Become a dealer</a></li>
           </ul>
         </div>
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSpecTabs();
   initHeroSlider();
   selectQueryTopic();
+  selectBookingModel();
   initScooterCatalog();
   initMotionShowcase();
 });
@@ -157,6 +159,14 @@ function initMotionShowcase() {
 
   if (reduceMotion) video.pause();
   syncButton();
+}
+
+function selectBookingModel() {
+  const select = document.getElementById("booking-model");
+  if (!select) return;
+  const model = new URLSearchParams(window.location.search).get("model");
+  if (model === "m5") select.value = "SYS EV M5";
+  if (model === "fx") select.value = "SYS EV FX";
 }
 
 const products = {
@@ -208,6 +218,7 @@ function initModelStage() {
     stage.querySelector("[data-price]").textContent = product.price;
     stage.querySelector("[data-battery-warranty]").textContent = product.batteryWarranty;
     stage.querySelector("[data-model-link]").href = `scooters.html?model=${selected}&tab=specifications`;
+    stage.querySelector("[data-booking-link]").href = `booking.html?model=${selected}`;
     stage.querySelector("[data-color-name]").textContent = product.colors[0][0];
     stage.querySelector("[data-colors]").innerHTML = product.colors.map(([name, src, color], index) =>
       `<button class="color-swatch ${index === 0 ? "active" : ""}" type="button" style="background:${color}" data-src="${src}" data-name="${name}" aria-label="View ${name}"></button>`
@@ -502,7 +513,7 @@ function initScooterCatalog() {
           ${model.pricing.map(row => `<div class="catalog-price-row">${row.map(value => `<span>${value}</span>`).join("")}</div>`).join("")}
         </div>
         <div class="catalog-price-actions">
-          <a class="btn" href="test-ride.html">Book a test ride</a>
+          <a class="btn" href="booking.html?model=${modelKey}">Advance booking</a>
           <a class="btn btn-outline" href="https://wa.me/9779714571009" target="_blank" rel="noopener">${icon("message-circle")} Ask about stock</a>
         </div>`;
     }
@@ -515,6 +526,7 @@ function initScooterCatalog() {
     catalog.querySelector("[data-catalog-image]").alt = `${model.name} in ${model.colors[0][0]}`;
     catalog.querySelector("[data-catalog-name]").textContent = model.name;
     catalog.querySelector("[data-catalog-subtitle]").textContent = model.subtitle;
+    catalog.querySelector("[data-catalog-booking]").href = `booking.html?model=${modelKey}`;
     catalog.querySelector("[data-catalog-brochure]").href = model.brochure;
     catalog.querySelector("[data-catalog-brochure]").setAttribute("aria-label", `Open the full ${model.name} brochure`);
     modelButtons.forEach(button => {

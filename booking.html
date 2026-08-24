@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/sys-ev-emblem.png">
+  <title>Advance Booking | SYS EV Nepal</title>
+  <meta name="description" content="Advance-book a SYS EV M5 or FX using the official Fonepay merchant QR and send payment details for confirmation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#main">Skip to content</a><header id="site-header"></header>
+  <main id="main">
+    <section class="page-hero booking-hero">
+      <div class="container">
+        <p class="crumb"><a href="index.html">Home</a> / Advance booking</p>
+        <span class="eyebrow" style="margin-top:28px">Reserve your SYS EV</span>
+        <h1 class="display">Confirm first.<br>Pay securely.</h1>
+        <p class="section-copy">Speak with the SYS EV team about your model, range, stock, colour and agreed advance amount before making payment.</p>
+        <div class="actions booking-hero-actions">
+          <a class="btn" href="https://wa.me/9779714571009?text=Hello%20SYS%20EV%2C%20I%20would%20like%20to%20confirm%20availability%20and%20the%20advance%20amount%20before%20booking." target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Confirm on WhatsApp</a>
+          <a class="btn btn-outline" href="tel:+9779714571009"><i data-lucide="phone"></i> Call +977-9714571009</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking-layout">
+        <div class="booking-copy">
+          <span class="eyebrow">Three clear steps</span>
+          <h2 class="section-title">Advance booking without guesswork.</h2>
+          <ol class="booking-steps">
+            <li><span>1</span><div><strong>Confirm the scooter</strong><p>Check the model, battery option, colour, claimed range, current stock and agreed advance amount with SYS EV.</p></div></li>
+            <li><span>2</span><div><strong>Scan and pay</strong><p>Use the official Fonepay merchant QR below and verify that the recipient is S.Y.S. EV Private Limited before confirming payment.</p></div></li>
+            <li><span>3</span><div><strong>Send the reference</strong><p>Enter the transaction reference in the form. SYS EV will verify the payment and confirm the booking on WhatsApp.</p></div></li>
+          </ol>
+          <div class="booking-notice">
+            <i data-lucide="shield-check"></i>
+            <p><strong>Payment safety</strong>Do not pay an unconfirmed amount. A QR payment alone does not confirm a booking; confirmation is issued after SYS EV verifies the transaction and availability.</p>
+          </div>
+        </div>
+
+        <figure class="payment-qr-panel">
+          <div class="payment-qr-head">
+            <span><i data-lucide="scan-line"></i> Official merchant QR</span>
+            <strong>Fonepay</strong>
+          </div>
+          <a class="payment-qr-image" href="assets/sys-ev-fonepay-qr.jpeg" target="_blank" rel="noopener" aria-label="Open the SYS EV Fonepay QR image at full size">
+            <img src="assets/sys-ev-fonepay-qr.jpeg" alt="Fonepay merchant QR for S.Y.S. EV Private Limited">
+          </a>
+          <figcaption>
+            <strong>S.Y.S. EV Private Limited</strong>
+            <span>Global IME Bank · Fonepay merchant payment</span>
+          </figcaption>
+          <div class="payment-qr-actions">
+            <a class="btn" href="assets/sys-ev-fonepay-qr.jpeg" target="_blank" rel="noopener"><i data-lucide="maximize-2"></i> Open full size</a>
+            <a class="btn btn-outline" href="assets/sys-ev-fonepay-qr.jpeg" download="SYS-EV-Fonepay-QR.jpeg"><i data-lucide="download"></i> Save QR</a>
+          </div>
+          <p class="form-note">On a phone, save the QR and choose it from your supported banking or wallet app if available.</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-white" id="payment-details">
+      <div class="container booking-form-layout">
+        <div>
+          <span class="eyebrow">Payment confirmation</span>
+          <h2 class="section-title">Send your booking details.</h2>
+          <p class="section-copy">Complete this only after payment. WhatsApp will open with the details ready to send; attach your payment screenshot in the conversation if requested.</p>
+        </div>
+        <form class="form-shell" data-whatsapp-form data-booking-form>
+          <input type="hidden" name="Request" value="Advance booking payment verification">
+          <div class="form-grid">
+            <div class="field"><label for="booking-name">Customer name</label><input id="booking-name" name="Customer name" autocomplete="name" required></div>
+            <div class="field"><label for="booking-phone">Phone</label><input id="booking-phone" name="Phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="booking-model">Scooter</label><select id="booking-model" name="Scooter" required><option value="SYS EV M5">SYS EV M5</option><option value="SYS EV FX">SYS EV FX</option></select></div>
+            <div class="field"><label for="booking-battery">Battery option</label><select id="booking-battery" name="Battery option"><option value="To be confirmed">To be confirmed</option><option value="8.64 kWh LFP">8.64 kWh LFP (M5)</option><option value="3.96 kWh LFP">3.96 kWh LFP (FX)</option><option value="2.52 kWh LFP">2.52 kWh LFP (FX)</option><option value="2.52 kWh Graphene">2.52 kWh Graphene (FX)</option></select></div>
+            <div class="field"><label for="booking-colour">Preferred colour</label><input id="booking-colour" name="Preferred colour" placeholder="Colour agreed with SYS EV"></div>
+            <div class="field"><label for="booking-amount">Advance paid (NPR)</label><input id="booking-amount" name="Advance paid (NPR)" type="number" inputmode="numeric" min="1" step="1" placeholder="Agreed amount" required></div>
+            <div class="field full"><label for="booking-reference">Transaction/reference ID</label><input id="booking-reference" name="Transaction/reference ID" autocomplete="off" required></div>
+            <div class="field full"><label class="booking-confirm"><input type="checkbox" name="Payment declaration" value="I confirm the recipient and payment details" required><span>I checked the recipient name and confirm that the payment details entered above are accurate.</span></label></div>
+            <div class="field full"><button class="btn btn-block" type="submit"><i data-lucide="message-circle"></i> Send payment details on WhatsApp</button></div>
+          </div>
+          <p class="form-note">Booking remains pending until SYS EV verifies the transaction and sends confirmation.</p>
+          <div class="form-success">Your advance-booking details are ready in WhatsApp.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script src="assets/main.js"></script>
+</body>
+</html>
