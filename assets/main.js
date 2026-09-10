@@ -60,7 +60,7 @@ if (footer) {
           <h3>Contact</h3>
           <ul>
             <li><a href="https://wa.me/9779714571009" target="_blank" rel="noopener">WhatsApp: +977-9714571009</a></li>
-            <li><a href="mailto:info@sysev.com.np">info@sysev.com.np</a></li>
+            <li><a href="mailto:ShareYourStory@sysev.com.np">ShareYourStory@sysev.com.np</a></li>
             <li>${footerLocation}</li>
           </ul>
         </div>
